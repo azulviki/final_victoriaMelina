@@ -3,6 +3,7 @@ const text = document.getElementById("intro-text");
 const hearBtn = document.getElementById("hear-btn");
 const canvas = document.getElementById("synth-wave");
 const ctx = canvas.getContext("2d");
+const audioEl = document.getElementById("intro-audio");
 
 const tracks = [
   "audio/track1.mp3",
@@ -17,7 +18,6 @@ let audioContext;
 let analyser;
 let dataArray;
 let source;
-let audioEl;
 
 // =======================
 // Loop de imágenes
@@ -67,10 +67,8 @@ function drawWave() {
   for (let i = 0; i < dataArray.length; i++) {
     const v = dataArray[i] / 128.0;
     const y = (v * canvas.height) / 2;
-
     if (i === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
-
     x += sliceWidth;
   }
 
@@ -85,46 +83,56 @@ window.addEventListener("load", () => {
   startImageSequence();
   setTimeout(() => {
     text.style.opacity = "1";
-  }, 2000);
+  }, 1000);
 });
 
 // =======================
 // Botón OÍR
 // =======================
 hearBtn.addEventListener("click", async () => {
-  // Reiniciar fotos
-  clearTimeout(imageTimer);
-  startImageSequence();
-
-  // Elegir track aleatoria
   const track = tracks[Math.floor(Math.random() * tracks.length)];
 
-  // Crear AudioContext y audio solo dentro del click
+  // Detener audio anterior si existe
+  if (!audioEl.paused) {
+    audioEl.pause();
+  }
+
+  // Asignar nueva pista y cargar
+  audioEl.src = track;
+  audioEl.loop = true;
+  audioEl.volume = 0.6;
+  audioEl.load();
+
+  // Esperar que el audio pueda reproducirse
+  try {
+    await audioEl.play(); // Este play desbloquea el audio en Chrome
+  } catch (err) {
+    console.log("Error al reproducir:", err);
+    return;
+  }
+
+  // Crear AudioContext y conectar al osciloscopio solo la primera vez
   if (!audioContext) {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioContext.state === "suspended") await audioContext.resume();
 
-    audioEl = new Audio(track);
-    audioEl.loop = true;
-    audioEl.volume = 0.6;
-
+    source = audioContext.createMediaElementSource(audioEl);
     analyser = audioContext.createAnalyser();
     analyser.fftSize = 1024;
     dataArray = new Uint8Array(analyser.frequencyBinCount);
 
-    source = audioContext.createMediaElementSource(audioEl);
     source.connect(analyser);
     analyser.connect(audioContext.destination);
-
-    audioEl.play().catch(err => console.log(err));
-  } else {
-    // Cambiar canción de manera segura
-    audioEl.pause();
-    audioEl.src = track;
-    audioEl.load();
-    audioEl.play().catch(err => console.log(err));
   }
 
-  hearBtn.textContent = "SONANDO...";
+  hearBtn.textContent = "VOLVER A OÍR";
 });
 
 
+// =======================
+// Botón entrar en silencio
+// =======================
+const silentBtn = document.querySelector("#intro-text a");
+silentBtn.addEventListener("click", () => {
+  if (!audioEl.paused) audioEl.pause();
+});
