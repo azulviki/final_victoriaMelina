@@ -81,5 +81,36 @@ body {
   color: white;
 }
 
+.pad {
+    width: 100%;
+    padding-top: 100%;
+    background: #6d16c9;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.pad:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* colores base */
+.pad[data-id="0"] { background: #f87171; }  /* rojo */
+.pad[data-id="1"] { background: #34d399; }  /* verde */
+.pad[data-id="2"] { background: #60a5fa; }  /* azul */
+.pad[data-id="3"] { background: #facc15; }  /* amarillo */
+.pad[data-id="4"] { background: #a78bfa; }  /* violeta */
+.pad[data-id="5"] { background: #f472b6; }  /* rosa */
+.pad[data-id="6"] { background: #f97316; }  /* naranja */
+.pad[data-id="7"] { background: #22d3ee; }  /* celeste */
+
+
+/* efecto flash */
+.pad.active {
+  filter: brightness(1.5);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
 
 
