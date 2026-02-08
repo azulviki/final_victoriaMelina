@@ -1,28 +1,130 @@
-const title = document.getElementById("intro-title");
-const subtitle = document.getElementById("intro-subtitle");
-const button = document.getElementById("enter-btn");
-const intro = document.getElementById("intro");
+const images = document.querySelectorAll(".intro-img");
+const text = document.getElementById("intro-text");
+const hearBtn = document.getElementById("hear-btn");
+const canvas = document.getElementById("synth-wave");
+const ctx = canvas.getContext("2d");
 
-function fadeIn(element, delay) {
-    setTimeout(() => {
-        element.style.transition = "opacity 1s ease";
-        element.style.opacity = 1;
-    }, delay);
+const tracks = [
+  "audio/track1.mp3",
+  "audio/track2.mp3",
+  "audio/track3.mp3"
+];
+
+let index = 0;
+let imageTimer;
+
+let audioContext;
+let analyser;
+let dataArray;
+let source;
+let audioEl;
+
+// =======================
+// Loop de imágenes
+// =======================
+function resetImages() {
+  images.forEach(img => img.classList.remove("active"));
+  index = 0;
 }
 
-// Animaciones en secuencia
+function showNextImage() {
+  images.forEach((img, i) => img.classList.remove("active"));
+  images[index].classList.add("active");
+  index = (index + 1) % images.length;
+  imageTimer = setTimeout(showNextImage, 1200);
+}
+
+function startImageSequence() {
+  resetImages();
+  showNextImage();
+}
+
+// =======================
+// Osciloscopio
+// =======================
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function drawWave() {
+  requestAnimationFrame(drawWave);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  if (!analyser || !dataArray) return;
+
+  analyser.getByteTimeDomainData(dataArray);
+
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "#00ffff";
+  ctx.beginPath();
+
+  const sliceWidth = canvas.width / dataArray.length;
+  let x = 0;
+
+  for (let i = 0; i < dataArray.length; i++) {
+    const v = dataArray[i] / 128.0;
+    const y = (v * canvas.height) / 2;
+
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+
+    x += sliceWidth;
+  }
+
+  ctx.stroke();
+}
+drawWave();
+
+// =======================
+// Mostrar fotos y texto al cargar
+// =======================
 window.addEventListener("load", () => {
-    fadeIn(title, 300);
-    fadeIn(subtitle, 1200);
-    fadeIn(button, 2000);
+  startImageSequence();
+  setTimeout(() => {
+    text.style.opacity = "1";
+  }, 2000);
 });
 
-// Click en entrar
-button.addEventListener("click", () => {
-    intro.style.transition = "opacity 0.8s ease";
-    intro.style.opacity = 0;
+// =======================
+// Botón OÍR
+// =======================
+hearBtn.addEventListener("click", async () => {
+  // Reiniciar fotos
+  clearTimeout(imageTimer);
+  startImageSequence();
 
-    setTimeout(() => {
-        window.location.href = "index.html";
-    }, 800);
+  // Elegir track aleatoria
+  const track = tracks[Math.floor(Math.random() * tracks.length)];
+
+  // Crear AudioContext y audio solo dentro del click
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    audioEl = new Audio(track);
+    audioEl.loop = true;
+    audioEl.volume = 0.6;
+
+    analyser = audioContext.createAnalyser();
+    analyser.fftSize = 1024;
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+    source = audioContext.createMediaElementSource(audioEl);
+    source.connect(analyser);
+    analyser.connect(audioContext.destination);
+
+    audioEl.play().catch(err => console.log(err));
+  } else {
+    // Cambiar canción de manera segura
+    audioEl.pause();
+    audioEl.src = track;
+    audioEl.load();
+    audioEl.play().catch(err => console.log(err));
+  }
+
+  hearBtn.textContent = "SONANDO...";
 });
+
+

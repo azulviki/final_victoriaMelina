@@ -3,40 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronic Women</title>
+    <title>Intro – Mujeres en la Música Electrónica</title>
 
-    <!-- Tailwind local -->
-    <link rel="stylesheet" href="tailwind/tailwind.css">
-
-    <!-- Tailwind CDN temporal 
-    <script src="https://cdn.tailwindcss.com"></script>-->
-
-    <!-- CSS propio -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/output.css">
 </head>
 
 <body class="bg-black text-white overflow-hidden">
 
-    <section id="intro" class="w-full h-screen flex flex-col justify-center items-center text-center px-6">
+    <main class="relative w-screen h-screen">
 
-        <h1 id="intro-title"
-            class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest opacity-0">
-            MUJERES ELECTRÓNICAS
-        </h1>
+        <!-- Audio -->
+        <audio id="intro-audio"></audio>
 
-        <p id="intro-subtitle"
-           class="mt-6 text-sm md:text-lg text-gray-400 max-w-xl opacity-0">
-            El rol de la mujer en la historia de la música electrónica
-        </p>
+        <!-- Imágenes -->
+        <div id="intro-img" class="absolute inset-0">
+            <img src="img/pioneras/1.jpg" class="intro-img">
+            <img src="img/pioneras/2.jpg" class="intro-img">
+            <img src="img/pioneras/3.jpg" class="intro-img">
+            <img src="img/pioneras/4.jpg" class="intro-img">
+            <img src="img/pioneras/5.jpg" class="intro-img">
+            <img src="img/pioneras/6.jpg" class="intro-img">
+            <img src="img/pioneras/7.jpg" class="intro-img">
+            <img src="img/pioneras/8.jpg" class="intro-img">
+            <img src="img/pioneras/9.jpg" class="intro-img">
+        </div>
 
-        <button id="enter-btn"
-                class="mt-12 px-8 py-3 border border-white text-sm tracking-widest uppercase opacity-0 hover:bg-white hover:text-black transition">
-            Entrar
-        </button>
+        <!-- Osciloscopio -->
+        <canvas id="synth-wave"
+            class="absolute inset-0 w-full h-full opacity-40 pointer-events-none z-10">
+        </canvas>
 
-    </section>
+        <!-- Texto -->
+        <div id="intro-text"
+            class="absolute inset-0 flex flex-col items-center justify-center
+                   opacity-0 transition-opacity duration-1000 text-center z-20">
+
+            <h1 class="text-3xl md:text-5xl tracking-widest font-bold">
+                MUJERES EN LA<br>MÚSICA ELECTRÓNICA
+            </h1>
+
+            <button id="hear-btn"
+                class="mt-6 px-6 py-3 border border-cyan-400 text-cyan-400
+                       hover:bg-cyan-400 hover:text-black transition">
+                OÍR
+            </button>
+
+            <a href="index.html"
+               class="mt-4 text-sm opacity-60 hover:opacity-100">
+               Entrar sin sonido
+            </a>
+
+        </div>
+
+    </main>
 
     <script src="js/intro.js"></script>
 </body>
+
 </html>
