@@ -44,7 +44,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 2s ease;
 }
 
 .intro-img.active {
@@ -53,10 +53,33 @@ body {
 
 #synth-wave {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
+  inset: 0;
+  z-index: 10;
   mix-blend-mode: screen;
+  pointer-events: none
 }
+
+/* Botón oír */
+#hear-btn {
+  background-color: transparent;
+  border: 1px solid #8B5CF6;
+  color: #8B5CF6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Hover solo en dispositivos con mouse */
+@media (hover: hover) {
+  #hear-btn:hover {
+    background-color: #8B5CF6;
+    color: white;
+  }
+}
+
+/* Estado activo para mobile */
+#hear-btn.activo {
+  background-color: #8B5CF6;
+  color: white;
+}
+
 
 

@@ -31,7 +31,7 @@ function showNextImage() {
   images.forEach((img, i) => img.classList.remove("active"));
   images[index].classList.add("active");
   index = (index + 1) % images.length;
-  imageTimer = setTimeout(showNextImage, 1200);
+  imageTimer = setTimeout(showNextImage, 3000);
 }
 
 function startImageSequence() {
@@ -58,7 +58,7 @@ function drawWave() {
   analyser.getByteTimeDomainData(dataArray);
 
   ctx.lineWidth = 2;
-  ctx.strokeStyle = "#00ffff";
+  ctx.strokeStyle = "#8B5CF6";
   ctx.beginPath();
 
   const sliceWidth = canvas.width / dataArray.length;
@@ -82,7 +82,8 @@ drawWave();
 window.addEventListener("load", () => {
   startImageSequence();
   setTimeout(() => {
-    text.style.opacity = "1";
+    text.classList.remove("opacity-0");
+    text.classList.add("opacity-100");
   }, 1000);
 });
 
@@ -91,8 +92,15 @@ window.addEventListener("load", () => {
 // =======================
 hearBtn.addEventListener("click", async () => {
   const track = tracks[Math.floor(Math.random() * tracks.length)];
+  // efecto visual seguro
+  hearBtn.classList.add("activo");
 
-  // Detener audio anterior si existe
+setTimeout(() => {
+  hearBtn.classList.remove("activo");
+}, 400);
+
+
+    // Detener audio anterior si existe
   if (!audioEl.paused) {
     audioEl.pause();
   }
@@ -125,7 +133,7 @@ hearBtn.addEventListener("click", async () => {
     analyser.connect(audioContext.destination);
   }
 
-  hearBtn.textContent = "VOLVER A OÍR";
+  hearBtn.textContent = "OÍR";
 });
 
 
