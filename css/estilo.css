@@ -22,11 +22,27 @@ body {
     transform: translateX(10px);
 }
 
-/* Mobile: efecto al tocar */
-.nav-key a:active {
-    background: white;
-    color: black;
+/* Clase que se activa con JS en mobile */
+.nav-key a.active {
+    background: white !important;
+    color: black !important;
     transform: translateX(10px);
+    position: relative;
+    z-index: 10; /* para que esté encima del botón hamburguesa */
+}
+/* Efecto “flash” para la tecla */
+.nav-key a.active {
+    background: white !important;
+    color: black !important;
+    transform: translateX(10px);
+    transition: all 0.3s ease; /* transición suave */
+    position: relative;
+    z-index: 10;
+}
+
+/* Menú lateral con transición suave */
+#sidebar {
+    transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
