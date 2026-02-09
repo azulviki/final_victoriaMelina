@@ -4,35 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mujeres en la Música Electrónica</title>
-    
-    <!-- Tailwind CDN temporal 
-    <script src="https://cdn.tailwindcss.com"></script>-->
 
-    <!-- CSS propio -->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/output.css">
 </head>
 
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-sans
+             bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_60%)]">
 
-    <!-- BOTÓN HAMBURGUESA (solo mobile) -->
-    <button id="menu-toggle"
-    class="md:hidden fixed top-2 left-2 z-50 bg-black">
-    ☰
-    </button>
-
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 z-50 bg-black">☰</button>
 
     <div class="flex min-h-screen">
 
         <!-- MENÚ LATERAL -->
         <nav id="sidebar"
-            class="fixed md:static top-0 left-0 h-full w-64 bg-black border-r border-gray-800
-                   transform -translate-x-full md:translate-x-0
-                   transition-transform duration-300 z-40">
+             class="fixed md:static top-0 left-0 h-full w-64 bg-black border-r border-gray-800
+                    transform -translate-x-full md:translate-x-0
+                    transition-transform duration-300 z-40">
 
-            <a href="index.html"
-            class="block p-6 text-xl font-bold tracking-widest hover:text-purple-400 transition-colors">
-            LA MUJER <br> EN LA MÚSICA <br> ELECTRÓNICA
+            <a href="index.html" class="block p-6 text-xl font-bold tracking-widest hover:text-purple-400 transition-colors">
+                LA MUJER <br> EN LA MÚSICA <br> ELECTRÓNICA
             </a>
 
             <ul class="flex flex-col">
@@ -50,22 +42,51 @@
         </nav>
 
         <!-- CONTENIDO -->
-        <main class="flex-1 p-6 md:p-10 md:ml-64">
-            <h1 class="text-3xl md:text-4xl font-bold mb-6">
-                El rol de la mujer en la música electrónica
-            </h1>
+    <main class="flex-1 p-6 md:ml-64">
+    <div class="max-w-3xl md:ml-12 mt-12">
 
-            <p class="text-base md:text-lg text-gray-300 max-w-2xl">
-                Este sitio explora la historia, el impacto y las contribuciones
-                de las mujeres en la música electrónica desde sus orígenes
-                hasta la actualidad.
-            </p>
-        </main>
+        <!-- Título principal -->
+        <h1 class="text-5xl md:text-6xl font-bold mt-16 mb-6">
+            El rol de la mujer <br> en la música electrónica
+        </h1>
+
+        <!-- Subtítulo / párrafo introductorio -->
+        <p class="text-lg md:text-2xl text-gray-400 font-light mb-12">
+            Este sitio explora la historia, el impacto y las contribuciones <br>
+            de las mujeres en  música electrónica desde sus orígenes <br>
+            hasta la actualidad.
+        </p>
+
+        <!-- Subtítulo 1 -->
+        <h2 class="text-2xl md:text-3xl font-semibold  mb-6">
+            ¿Qué es la música electrónica?
+        </h2>
+
+        <!-- Primer párrafo de sección -->
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+            La música electrónica es aquella que utiliza dispositivos eléctricos, electrónicos o digitales para generar, procesar o reproducir sonidos.
+            A diferencia de la música acústica tradicional, donde el sonido se produce mediante la vibración física de cuerdas, membranas o columnas de aire,
+            en la música electrónica el sonido puede surgir directamente de circuitos eléctricos, osciladores o sistemas digitales, o bien de la manipulación tecnológica de sonidos grabados.
+        </p>
+
+        <!-- Segundo párrafo de sección -->
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+            Sin embargo, el concepto de música electrónica no tiene un único origen ni una 
+            definición fija. Se trata de un campo que ha evolucionado junto con los avances 
+            tecnológicos y científicos de cada época y variando según cada lugar del mundo. 
+        </p>
+
+        <!-- Tercer párrafo de sección -->
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-16">
+            Por eso, su historia se puede entender como el resultado de una serie de 
+            transformaciones técnicas, culturales y estéticas que comienzan a fines del 
+            siglo XIX y continúan hasta la actualidad.
+        </p>
 
     </div>
+</main>
 
-   <script src="js/main.js"></script>
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>
