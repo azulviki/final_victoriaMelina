@@ -2,7 +2,7 @@
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("sidebar");
 
-  // --- Toggle del menú hamburguesa ---
+  // Botón hamburguesa
   if (toggle && menu) {
     toggle.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -10,42 +10,30 @@
     });
   }
 
-  const menuLinks = document.querySelectorAll("#sidebar .nav-key a");
+  // Submenús en mobile
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
-  menuLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
+  submenuToggles.forEach(btn => {
+    btn.addEventListener("click", function (e) {
       if (window.innerWidth < 768) {
-        e.preventDefault();
+        const submenu = btn.nextElementSibling;
 
-        // Aplicamos efecto flash
-        link.classList.add("active");
-
-        // Limpiamos timeouts anteriores
-        if (link.dataset.timeoutId) clearTimeout(link.dataset.timeoutId);
-
-        // Esperamos 1 segundo antes de cerrar menú y navegar
-        const timeoutId = setTimeout(() => {
-          // Removemos la clase de efecto
-          link.classList.remove("active");
-
-          // Cerramos el menú con transición
-          menu.classList.add("-translate-x-full");
-
-          // Redirigimos al link
-          window.location.href = link.href;
-
-          delete link.dataset.timeoutId;
-        }, 500);
-
-        link.dataset.timeoutId = timeoutId;
+        if (submenu.classList.contains("hidden")) {
+          e.preventDefault();
+          submenu.classList.remove("hidden");
+        }
+        // segundo click navega normalmente
       }
     });
   });
 
-  // --- Cerrar menú si se toca fuera ---
+  // Cerrar menú tocando fuera
   document.body.addEventListener("click", (e) => {
     if (window.innerWidth < 768) {
-      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      const insideMenu = menu.contains(e.target);
+      const clickedToggle = toggle.contains(e.target);
+
+      if (!insideMenu && !clickedToggle) {
         menu.classList.add("-translate-x-full");
       }
     }

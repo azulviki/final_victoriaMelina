@@ -4,34 +4,33 @@ body {
     overflow-x: hidden;
 }
 
-
-
 /* Estilo de las teclas del menú */
 .nav-key {
     border-top: 1px solid #222;
 }
 
-.nav-key a {
+.nav-key > a {
     display: block;
     padding: 14px 20px;
     transition: all 0.2s ease;
 }
 
-/* Desktop: efecto hover */
-.nav-key:hover a {
+/* Desktop: efecto hover SOLO en links principales */
+.nav-key > a:hover {
     background: white;
     color: black;
     transform: translateX(10px);
 }
 
 /* Clase que se activa con JS en mobile */
-.nav-key a.active {
+.nav-key > a.active {
     background: white !important;
     color: black !important;
     transform: translateX(10px);
     position: relative;
-    z-index: 10; /* para que esté encima del botón hamburguesa */
+    z-index: 10;
 }
+
 /* Efecto “flash” para la tecla */
 .nav-key a.active {
     background: white !important;
