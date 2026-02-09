@@ -10,25 +10,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // --- Efecto de selección para links en mobile ---
-  const menuLinks = document.querySelectorAll("#sidebar .nav-key a");
+const menuLinks = document.querySelectorAll("#sidebar .nav-key a");
 
-  menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth < 768) {
-        // Quitamos primero cualquier clase residual
-        link.classList.remove("bg-white", "text-black");
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 768) {
+      // Aplicamos la clase de fondo blanco y texto negro
+      link.classList.add("bg-white", "text-black");
 
-        // Forzamos reflujo para reiniciar la transición
-        void link.offsetWidth;
-
-        // Aplicamos las clases de efecto
-        link.classList.add("bg-white", "text-black", "transition-colors", "duration-500", "ease-in-out");
-
-        // Removemos las clases después de 1 segundo
-        setTimeout(() => {
-          link.classList.remove("bg-white", "text-black");
-        }, 1000);
+      // Limpiamos cualquier timeout previo
+      if (link.dataset.timeoutId) {
+        clearTimeout(link.dataset.timeoutId);
       }
-    });
+
+      // Lo removemos después de 1 segundo
+      const timeoutId = setTimeout(() => {
+        link.classList.remove("bg-white", "text-black");
+        delete link.dataset.timeoutId;
+      }, 3000);
+
+      link.dataset.timeoutId = timeoutId;
+    }
   });
+});
+
 });
