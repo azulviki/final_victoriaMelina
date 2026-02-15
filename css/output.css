@@ -690,6 +690,10 @@ video {
   height: 100vh;
 }
 
+.h-\[calc\(100vh-6rem\)\] {
+  height: calc(100vh - 6rem);
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -779,6 +783,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .rounded-full {
