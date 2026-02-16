@@ -39,3 +39,90 @@
     }
   });
 });
+
+
+//audio en header
+const audio = document.getElementById("ambientAudio");
+const muteBtn = document.getElementById("muteBtn");
+const canvas = document.getElementById("oscilloscope");
+const ctx = canvas.getContext("2d");
+
+let audioCtx;
+let analyser;
+let dataArray;
+
+function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function initAudio() {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const source = audioCtx.createMediaElementSource(audio);
+
+    analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 1024;
+
+    source.connect(analyser);
+    analyser.connect(audioCtx.destination);
+
+    dataArray = new Uint8Array(analyser.fftSize);
+
+    draw();
+}
+
+function draw() {
+    requestAnimationFrame(draw);
+
+    analyser.getByteTimeDomainData(dataArray);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.lineWidth = 2;
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0, "rgba(140,160,255,0)");
+    gradient.addColorStop(0.5, "rgba(140,160,255,0.7)");
+    gradient.addColorStop(1, "rgba(140,160,255,0)");
+
+
+
+ctx.strokeStyle = gradient;
+    ctx.beginPath();
+
+    const sliceWidth = canvas.width / dataArray.length;
+    let x = 0;
+
+    for (let i = 0; i < dataArray.length; i++) {
+        let v = dataArray[i] / 128.0;
+        let y = (v * canvas.height) / 2;
+
+        if (i === 0) {
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+        }
+
+        x += sliceWidth;
+    }
+
+    ctx.stroke();
+}
+
+// Activación con primer click
+window.addEventListener("click", () => {
+    if (!audioCtx) {
+        initAudio();
+        audio.play();
+    }
+}, { once: true });
+
+// Botón mute
+muteBtn.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+    canvas.classList.toggle("hidden", audio.muted);
+});
+

@@ -9,25 +9,53 @@
     <link rel="stylesheet" href="css/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
 
-   <body class="bg-black text-white font-sans
+<body class="bg-black text-white font-sans
              bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_60%)] flex flex-col min-h-screen">
 
     <!-- BOTÓN HAMBURGUESA -->
     <button id="menu-toggle" class="md:hidden fixed top-2 left-2 z-50 bg-black">☰</button>
 
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden z-50">
+
+    <!-- CANVAS OSCILOSCOPIO -->
+    <canvas id="oscilloscope"
+            class="absolute inset-0 w-full h-full opacity-40 z-0"></canvas>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+        <div class="max-w-3xl md:ml-64 md:pl-12">
+            <a href="index.html">
+                <h1 class="md:text-2xl font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                    L A M U J E R E N L A M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                </h1>
+            </a>
+        </div>
+
+        <button id="muteBtn"
+                class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">
+            🔊
+        </button>
+    </div>
+
+    </header>
+
+         <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+
+
+         <!-- AUDIO -->
+         <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+
+
+    <!--CONTENEDOR-->
+
     <div class="flex flex-1 w-full h-screen">
 
+
         <!-- MENÚ LATERAL -->
-        <nav id="sidebar"
-             class="fixed md:static top-0 left-0 h-full w-64 bg-black border-r border-gray-800
-                    transform -translate-x-full md:translate-x-0
-                    transition-transform duration-300 z-40">
-
-            <a href="index.html" class="block p-6 font-roboto text-2xl tracking-widest hover:text-purple-400 transition-colors">
-                LA MUJER <br> EN LA MÚSICA <br> ELECTRÓNICA
-            </a>
-
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-20 flex items-center">    
             <ul class="font-open flex flex-col">
             <li class="nav-key"><a href="home.html">Inicio</a></li>
             <!-- PIONERAS CON SUBMENÚ -->
@@ -56,61 +84,70 @@
             </ul>
         </nav>
 
+
         <!-- CONTENIDO -->
     <main class="flex-1 p-6 md:ml-64 overflow-y-auto h-screen">
-    <div class="max-w-3xl md:ml-12 mt-12">
+
+            <div class="max-w-3xl md:ml-12 mt-12">  
 
         <!-- Título principal -->
-        <h1 class="text-5xl md:text-6xl font-bold mt-16 mb-6">
-            EL ROL DE LA MUJER <br> EN LA MÚSICA ELECTRÓNICA
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            ¿A qué llamamos “música electrónica”?
         </h1>
-
-        <!-- Subtítulo / párrafo introductorio -->
-        <p class="text-lg md:text-2xl text-gray-400 font-light mb-12">
-            Este sitio explora la historia, el impacto y las contribuciones <br>
-            de las mujeres en  música electrónica desde sus orígenes <br>
-            hasta la actualidad.
-        </p>
-
-        <!-- Subtítulo 1 -->
-        <h2 class="text-2xl md:text-3xl font-semibold  mb-6">
-            ¿Qué es la música electrónica?
-        </h2>
+            
 
         <!-- Primer párrafo de sección -->
         <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            La música electrónica es aquella que utiliza dispositivos eléctricos, electrónicos o digitales para generar, procesar o reproducir sonidos.
-            A diferencia de la música acústica tradicional, donde el sonido se produce mediante la vibración física de cuerdas, membranas o columnas de aire,
-            en la música electrónica el sonido puede surgir directamente de circuitos eléctricos, osciladores o sistemas digitales, o bien de la manipulación tecnológica de sonidos grabados.
+            La música electrónica es aquella que utiliza dispositivos eléctricos, 
+            electrónicos o digitales para generar, procesar o reproducir sonidos.
+             A diferencia de la música acústica tradicional, donde el sonido se produce 
+             mediante la vibración física de cuerdas, membranas o columnas de aire, en la música 
+             electrónica el sonido puede surgir directamente de circuitos eléctricos, osciladores o 
+             sistemas digitales, o bien de la manipulación tecnológica de sonidos grabados.
+
         </p>
 
         <!-- Segundo párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            Sin embargo, el concepto de música electrónica no tiene un único origen ni una 
-            definición fija. Se trata de un campo que ha evolucionado junto con los avances 
-            tecnológicos y científicos de cada época y variando según cada lugar del mundo. 
-        </p>
+       <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+            Sin embargo, el concepto de música electrónica no tiene un único 
+            origen ni una definición fija. Se trata de un campo que ha evolucionado 
+            junto con los avances tecnológicos y científicos de cada época y variando 
+            según cada lugar del mundo. </p>
 
         <!-- Tercer párrafo de sección -->
         <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-16">
-            Por eso, su historia se puede entender como el resultado de una serie de 
-            transformaciones técnicas, culturales y estéticas que comienzan a fines del 
-            siglo XIX y continúan hasta la actualidad.
+           Por eso, su historia se puede entender como el resultado de una 
+           serie de transformaciones técnicas, culturales y estéticas que 
+           comienzan a fines del siglo XIX y continúan hasta la actualidad.
+
         </p>
-                
-    </div>
+        
+</div>
 </div>
 
 </main>
+
 <!-- FOOTER -->
-    <footer class="bg-black text-white text-center py-6 border-t border-gray-800 w-full">
+    <footer class="relative text-white text-center py-6 overflow-hidden">
+
+    <!-- FONDO ANIMADO -->
+    <div class="absolute inset-0 ambient-bg"
+         style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10">
         <p class="text-sm md:text-base">
             Mujeres en la Música Electrónica - Victoria Mellina<br>
             Informática General 2025
         </p>
-    </footer>
+    </div>
 
-    <script src="js/main.js"></script>
+</footer>
+
+    
+<script src="js/main.js"></script>
+
 </body>
 
 </html>
