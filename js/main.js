@@ -1,6 +1,13 @@
   document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("sidebar");
+  
+  
+  document.querySelectorAll(".submenu").forEach(sub => {
+    if (window.innerWidth < 768) {
+        sub.style.display = "none";
+    }
+});
 
   // Botón hamburguesa
   if (toggle && menu) {
@@ -13,19 +20,21 @@
   // Submenús en mobile
   const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
-  submenuToggles.forEach(btn => {
-    btn.addEventListener("click", function (e) {
-      if (window.innerWidth < 768) {
-        const submenu = btn.nextElementSibling;
+  submenuToggles.forEach(btn => {btn.addEventListener("click", function (e) 
+    {if (window.innerWidth < 768) {
+      const submenu = btn.nextElementSibling;
+      console.log("submenu encontrado:", submenu); 
 
-        if (submenu.classList.contains("hidden")) {
-          e.preventDefault();
-          submenu.classList.remove("hidden");
-        }
-        // segundo click navega normalmente
+      if (submenu.style.display === "block") {
+        // ya está abierto, navegar normalmente
+      } else {
+        // primer click: abrir submenú
+        e.preventDefault();
+        submenu.style.display = "block";
       }
-    });
+    }
   });
+});
 
   // Cerrar menú tocando fuera
   document.body.addEventListener("click", (e) => {
@@ -35,6 +44,7 @@
 
       if (!insideMenu && !clickedToggle) {
         menu.classList.add("-translate-x-full");
+        document.querySelectorAll(".submenu").forEach(sub => sub.style.display = "");
       }
     }
   });

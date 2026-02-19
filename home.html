@@ -15,14 +15,14 @@
              bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_60%)] flex flex-col min-h-screen">
 
     <!-- BOTÓN HAMBURGUESA -->
-    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 z-50 bg-black">☰</button>
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 bg-black z-50 p-2 rounded">☰</button>
 
     <!-- HEADER -->
-    <header class="relative w-full overflow-hidden z-50">
+    <header class="relative w-full overflow-hidden z-10">
 
     <!-- CANVAS OSCILOSCOPIO -->
     <canvas id="oscilloscope"
-            class="absolute inset-0 w-full h-full opacity-40 z-0"></canvas>
+            class="absolute inset-0 w-full h-full opacity-40"></canvas>
 
     <!-- CONTENIDO -->
     <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
@@ -42,9 +42,7 @@
 
     </header>
 
-         <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
-
-
+    
          <!-- AUDIO -->
          <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
 
@@ -55,13 +53,13 @@
 
 
         <!-- MENÚ LATERAL -->
-        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-20 flex items-center">    
-            <ul class="font-open flex flex-col">
-            <li class="nav-key"><a href="home.html">Inicio</a></li>
-            <!-- PIONERAS CON SUBMENÚ -->
-            <li class="nav-key has-submenu group">
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+        <ul class="font-open flex flex-col w-full my-auto">
+        <li class="nav-key"><a href="home.html">Inicio</a></li>
+        <!-- PIONERAS CON SUBMENÚ -->
+        <li class="nav-key has-submenu group">
             <a href="pioneras.html" class="submenu-toggle">Pioneras</a>
-            <ul class="submenu ml-4 mt-2 space-y-2 hidden md:group-hover:block">
+            <ul class="submenu ml-4 mt-2 space-y-2">
             <li><a href="clara.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
             >Clara Rockmore</a>
             </li>          

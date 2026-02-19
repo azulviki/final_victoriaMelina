@@ -22,6 +22,18 @@ body {
     transform: translateX(10px);
 }
 
+/* Submenú: oculto por defecto */
+li.has-submenu > .submenu {
+    display: none;
+}
+
+/* Desktop: se abre con hover en el li padre */
+@media (min-width: 768px) {
+    .has-submenu:hover .submenu {
+        display: block;
+    }
+}
+
 /* Clase que se activa con JS en mobile */
 .nav-key > a.active {
     background: white !important;
@@ -31,12 +43,12 @@ body {
     z-index: 10;
 }
 
-/* Efecto “flash” para la tecla */
+/* Efecto "flash" para la tecla */
 .nav-key a.active {
     background: white !important;
     color: black !important;
     transform: translateX(10px);
-    transition: all 0.3s ease; /* transición suave */
+    transition: all 0.3s ease;
     position: relative;
     z-index: 10;
 }
@@ -46,9 +58,37 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* ── MOBILE: menú vertical con scroll ── */
 @media (max-width: 768px) {
+    #sidebar {
+        display: flex;
+        flex-direction: column;   /* el nav en columna */
+        align-items: stretch;     /* ocupa todo el ancho */
+        justify-content: flex-start;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-top: 3rem;        /* espacio bajo el botón hamburguesa */
+    }
+
+    #sidebar ul {
+        display: flex;
+        flex-direction: column;   /* items en columna */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .nav-key a {
         padding: 18px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    #sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
     }
 }
 
@@ -73,7 +113,7 @@ body {
   inset: 0;
   z-index: 10;
   mix-blend-mode: screen;
-  pointer-events: none
+  pointer-events: none;
 }
 
 /* Botón oír */
@@ -84,7 +124,7 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Hover solo en dispositivos con mouse */
+
 @media (hover: hover) {
   #hear-btn:hover {
     background-color: #8B5CF6;
@@ -92,7 +132,7 @@ body {
   }
 }
 
-/* Estado activo para mobile */
+
 #hear-btn.activo {
   background-color: #8B5CF6;
   color: white;
@@ -113,18 +153,15 @@ body {
     transform: scale(1.05);
 }
 
-/* colores base */
-.pad[data-id="0"] { background: #f87171; }  /* rojo */
-.pad[data-id="1"] { background: #34d399; }  /* verde */
-.pad[data-id="2"] { background: #60a5fa; }  /* azul */
-.pad[data-id="3"] { background: #facc15; }  /* amarillo */
-.pad[data-id="4"] { background: #a78bfa; }  /* violeta */
-.pad[data-id="5"] { background: #f472b6; }  /* rosa */
-.pad[data-id="6"] { background: #f97316; }  /* naranja */
-.pad[data-id="7"] { background: #22d3ee; }  /* celeste */
+.pad[data-id="0"] { background: #f87171; }
+.pad[data-id="1"] { background: #34d399; }
+.pad[data-id="2"] { background: #60a5fa; }
+.pad[data-id="3"] { background: #facc15; }
+.pad[data-id="4"] { background: #a78bfa; }
+.pad[data-id="5"] { background: #f472b6; }
+.pad[data-id="6"] { background: #f97316; }
+.pad[data-id="7"] { background: #22d3ee; }
 
-
-/* efecto flash */
 .pad.active {
   filter: brightness(1.5);
   box-shadow: 0 0 20px rgba(255,255,255,0.5);
@@ -151,7 +188,7 @@ body {
 
 .ambient-bg {
   background-size: 200% 200%;
-  animation: ambientGlow 03s ease-in-out infinite;
+  animation: ambientGlow 3s ease-in-out infinite;
 }
 
 #oscilloscope {
@@ -161,9 +198,5 @@ body {
 #oscilloscope.hidden {
     opacity: 0;
     pointer-events: none;
+
 }
-
-
-
-
-
