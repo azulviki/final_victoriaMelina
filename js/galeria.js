@@ -47,6 +47,7 @@ if (currentHowl && currentItem !== item) {
                 html5: true,
                 onend: () => {
                     indicator.textContent = "🎵";
+                    updateProgress();
                     progressBar.style.width = "0%";
                 }
             });
@@ -67,3 +68,11 @@ if (currentHowl && currentItem !== item) {
         updateProgress();
     });
 });
+function updateProgress() {
+    if (currentHowl && currentHowl.playing()) {
+        const ratio = currentHowl.seek() / currentHowl.duration();
+        console.log("ratio:", ratio, "progressBar:", progressBar); // ← agregá esto
+        progressBar.style.width = (ratio * 100) + "%";
+        animationId = requestAnimationFrame(updateProgress);
+    }
+}
