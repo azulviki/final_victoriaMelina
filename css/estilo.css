@@ -91,6 +91,21 @@ li.has-submenu > .submenu {
         align-items: stretch;
     }
 }
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+    }
+}
+@media (max-width: 768px) {
+    main {
+        padding-top: 100px; /* ajustá según la altura de tu header */
+        padding-left: 3rem !important; /* espacio para el botón */
+    }
+}
 
 /* IMÁGENES INTRO */
 
