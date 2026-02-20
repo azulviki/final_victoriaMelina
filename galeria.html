@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mujeres en la Música Electrónica</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-black text-white font-sans
+             bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_60%)] flex flex-col min-h-screen">
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 bg-black z-50 p-2 rounded">☰</button>
+
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden z-10">
+
+    <!-- CANVAS OSCILOSCOPIO -->
+    <canvas id="oscilloscope"
+            class="absolute inset-0 w-full h-full opacity-40"></canvas>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+        <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
+            <a href="index.html">
+                <h1 class="md:text-2xl m font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                    L A M U J E R <br class="md:hidden"> E N L A  M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                </h1>
+            </a>
+        </div>
+
+        <button id="muteBtn"
+                class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">
+            🔊
+        </button>
+    </div>
+
+    </header>
+
+    
+         <!-- AUDIO -->
+         <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+
+
+    <!--CONTENEDOR-->
+
+    <div class="flex flex-1 w-full h-screen">
+
+
+        <!-- MENÚ LATERAL -->
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+        <ul class="font-open flex flex-col w-full my-auto">
+        <li class="nav-key"><a href="home.html">INICIO</a></li>
+        <!-- PIONERAS CON SUBMENÚ -->
+        <li class="nav-key has-submenu group">
+            <a href="pioneras.html" class="submenu-toggle">PIONERAS</a>
+            <ul class="submenu ml-4 mt-2 space-y-2">
+            <li><a href="clara.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >Clara Rockmore</a>
+            </li>          
+            <li><a href="johanna.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >Johanna Beyer</a>
+            </li>
+            <li><a href="mary.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >Mary Hallock-Greenewalt</a>
+            </li>
+            </ul>
+            </li>
+            <li class="nav-key"><a href="#">EXPERIMENTALES</a></li>
+            <li class="nav-key"><a href="#">POPULARES</a></li>
+            <li class="nav-key"><a href="#">DIGITALES</a></li>
+            <li class="nav-key"><a href="#">CONTEMPORÁNEAS</a></li>
+            <li class="nav-key"><a href="#">ARGENTINAS</a></li>
+            <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+            <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+            <li class="nav-key"><a href="contacto.html">CONTACTO</a></li> 
+            </ul>
+        </nav>
+
+
+        <!-- CONTENIDO -->
+    <main class="flex-1 p-6 md:ml-64 overflow-y-auto h-screen">
+
+        <div class="flex flex-col md:flex-row gap-8 md:ml-12 mt-12">     
+
+            <div class="max-w-3xl">  
+
+        <!-- Título principal -->
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            ¿A qué llamamos “música electrónica”?
+        </h1>
+            
+
+        <!-- Primer párrafo de sección -->
+        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+            La música electrónica es aquella que utiliza dispositivos eléctricos, 
+            electrónicos o digitales para generar, procesar o reproducir sonidos.
+             A diferencia de la música acústica tradicional, donde el sonido se produce 
+             mediante la vibración física de cuerdas, membranas o columnas de aire, en la música 
+             electrónica el sonido puede surgir directamente de circuitos eléctricos, osciladores o 
+             sistemas digitales, o bien de la manipulación tecnológica de sonidos grabados.
+
+        </p>   
+       </div>
+       
+       </div>
+<!-- GRID -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                    <!-- Clara Rockmore -->
+<div class="gallery-wrapper">
+    <div class="gallery-item" data-audio="audio/galeria/clara.mp3">
+        <img src="img/galeria/clara.jpg" alt="Clara Rockmore">
+        <div class="gallery-overlay">
+            <span>🎵</span>
+            <p>Clara Rockmore</p>
+        </div>
+    </div>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+
+                    <!-- Johanna Beyer -->
+<div class="gallery-wrapper">
+    <div class="gallery-item" data-audio="audio/galeria/johanna.mp3">
+        <img src="img/galeria/johanna.jpg" alt="Johanna Beyer">
+        <div class="gallery-overlay">
+            <span>🎵</span>
+            <p>Johanna Beyer</p>
+        </div>
+    </div>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+
+                   <!-- Mary Hallock-Greenewalt -->
+<div class="gallery-wrapper">
+    <div class="gallery-item" data-audio="audio/galeria/maryhallock.mp3">
+        <img src="img/galeria/mary.jpg" alt="Mary Hallock-Greenewalt">
+        <div class="gallery-overlay">
+            <span>🎵</span>
+            <p>Mary Hallock-Greenewalt</p>
+        </div>
+    </div>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+</div>
+                </div>
+
+    </main>
+    </div>
+    
+
+</div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+    <footer class="relative text-white text-center py-6 overflow-hidden">
+
+    <!-- FONDO ANIMADO -->
+    <div class="absolute inset-0 ambient-bg"
+         style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10">
+        <p class="text-sm md:text-base">
+            Mujeres en la Música Electrónica - Victoria Mellina<br>
+            Informática General 2025
+        </p>
+    </div>
+
+</footer>
+
+    
+<script src="js/main.js"></script>
+<script src="node_modules/howler/dist/howler.min.js"></script>
+<script src="js/galeria.js"></script>
+
+
+</body>
+
+</html>
