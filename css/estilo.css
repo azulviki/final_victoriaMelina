@@ -162,9 +162,11 @@ footer {
   color: white;
 }
 
+/* JUEGO */
 .pad {
     width: 100%;
-    padding-top: 100%;
+    padding-top: 0;       
+    aspect-ratio: 1 / 1; 
     background: #6d16c9;
     border-radius: 12px;
     cursor: pointer;
@@ -198,6 +200,25 @@ footer {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+@media (max-width: 768px) {
+    #game {
+        gap: 0.5rem;
+        max-width: 280px; 
+        margin: 0 auto;   
+    }
+    
+    .pad {
+        padding-top: 50%; /* más chicos en mobile */
+    }
+}
+@media (max-width: 768px) {
+    .juego-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 100px);
+    }
+}
 
 @keyframes ambientGlow {
   0%, 100% {
@@ -223,4 +244,18 @@ footer {
     opacity: 0;
     pointer-events: none;
 
+}
+
+/* LISTAS */
+.list-item {
+    border-left: 2px solid #6b21a8;
+    padding: 6px 16px;
+    border-radius: 0 20px 20px 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: default;
+}
+
+.list-item:hover {
+    background-color: #6b21a8;
+    color: white;
 }

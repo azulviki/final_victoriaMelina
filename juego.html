@@ -3,82 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mujeres en la Música Electrónica</title>
-    
-    <!-- Tailwind CDN temporal 
-    <script src="https://cdn.tailwindcss.com"></script>-->
+    <title>Mujeres en la Música Electrónica - Juego</title>
 
     <!-- CSS propio -->
+
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-sans
+             bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_60%)] flex flex-col min-h-screen">
 
-    <!-- BOTÓN HAMBURGUESA (solo mobile) -->
-    <button id="menu-toggle"
-    class="md:hidden fixed top-2 left-2 z-50 bg-black">
-    ☰
-    </button>
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 bg-black z-50 p-2 rounded">☰</button>
 
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden z-10">
 
-    <div class="flex min-h-screen">
+    <!-- CANVAS OSCILOSCOPIO -->
+    <canvas id="oscilloscope"
+            class="absolute inset-0 w-full h-full opacity-40"></canvas>
 
-        <!-- MENÚ LATERAL -->
-        <nav id="sidebar"
-            class="fixed md:static top-0 left-0 h-full w-64 bg-black border-r border-gray-800
-                   transform -translate-x-full md:translate-x-0
-                   transition-transform duration-300 z-40">
-
-            <a href="index.html"
-            class="block p-6 text-xl font-bold tracking-widest hover:text-purple-400 transition-colors">
-            LA MUJER <br> EN LA MÚSICA <br> ELECTRÓNICA
+    <!-- CONTENIDO -->
+    <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+        <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
+            <a href="index.html">
+                <h1 class="md:text-2xl m font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                    L A M U J E R <br class="md:hidden"> E N L A  M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                </h1>
             </a>
+        </div>
 
-            <ul class="flex flex-col">
-                <li class="nav-key"><a href="home.html">Inicio</a></li>
-                <li class="nav-key"><a href="#">Pioneras</a></li>
-                <li class="nav-key"><a href="#">Años 70–80</a></li>
-                <li class="nav-key"><a href="#">Techno y House</a></li>
-                <li class="nav-key"><a href="#">Experimental</a></li>
-                <li class="nav-key"><a href="#">Actualidad</a></li>
-                <li class="nav-key"><a href="#">Latinoamérica</a></li>
-                <li class="nav-key"><a href="galeria.html">Galería</a></li>
-                <li class="nav-key"><a href="juego.html">Juego</a></li>
-                <li class="nav-key"><a href="contacto.html">Contacto</a></li> 
-            </ul>
-        </nav>
-
-    <main class="flex-1 flex flex-col items-center justify-center p-6 md:ml-64">
-    <div class="flex flex-col items-center justify-center text-center
-    w-full max-w-[15rem] sm:max-w-sm md:max-w-md">
-
-    <h1 class="text-3xl font-bold mb-4">SIMONA MUSICAL</h1>
-    <p id="level" class="mb-6">Nivel: 1</p>
-
-    <div id="game" class="grid grid-cols-2 md:grid-cols-4 gap-3 w-full">
-        <div class="pad" data-id="0"></div>
-        <div class="pad" data-id="1"></div>
-        <div class="pad" data-id="2"></div>
-        <div class="pad" data-id="3"></div>
-        <div class="pad" data-id="4"></div>
-        <div class="pad" data-id="5"></div>
-        <div class="pad" data-id="6"></div>
-        <div class="pad" data-id="7"></div>
+        <button id="muteBtn"
+                class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">
+            🔊
+        </button>
     </div>
 
-    <button id="start" class="mt-8 px-6 py-2 border border-purple-500 rounded-full
-    hover:bg-purple-600 hover:text-white
-           transition-all duration-300">
-        Comenzar
-    </button>
+    </header>
 
-</div>
+    
+         <!-- AUDIO -->
+         <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
 
-   
+
+    <!--CONTENEDOR-->
+
+    <div class="flex flex-1 w-full">
+
+
+        <!-- MENÚ LATERAL -->
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+        <ul class="font-open flex flex-col w-full my-auto">
+        <li class="nav-key"><a href="home.html">INICIO</a></li>
+        <!-- PIONERAS CON SUBMENÚ -->
+        <li class="nav-key has-submenu group">
+            <a href="pioneras.html" class="submenu-toggle">PIONERAS</a>
+            <ul class="submenu ml-4 mt-2 space-y-2">
+            <li><a href="clara.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Clara Rockmore</a>
+            </li>          
+            <li><a href="johanna.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Johanna Beyer</a>
+            </li>
+            <li><a href="mary.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Mary Hallock-Greenewalt</a>
+            </li>
+            </ul>
+            </li>
+            <!-- EXPERIMENTALES CON SUBMENÚ -->
+            <li class="nav-key has-submenu group">
+            <a href="experimentales.html" class="submenu-toggle">EXPERIMENTALES</a>
+            <ul class="submenu ml-4 mt-2 space-y-2">
+            <li><a href="daphne.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Daphne Oram</a>
+            </li>          
+            <li><a href="delia.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Delia Derbyshire</a>
+            </li>
+            <li><a href="hilda.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Hila Dianda</a>
+            </li>
+            <li><a href="beatriz.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Beatriz Ferreira</a>
+            </li>
+            </ul>
+            </li>
+            <!-- POPULARES CON SUBMENÚ -->
+            <li class="nav-key has-submenu group">
+            <a href="populares.html" class="submenu-toggle">POPULARES</a>
+            <ul class="submenu ml-4 mt-2 space-y-2">
+            <li><a href="wendy.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Wendy Carlos</a>
+            <li><a href="graciela.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Graciela Paraskevaídis</a>
+            <li><a href="elsa.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Elsa Justel</a>
+            <li><a href="margarita.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
+            >>Margarita Paksa</a>
+            </li>
+            </ul>
+            </li>
+            <li class="nav-key"><a href="#">DIGITALES</a></li>
+            <li class="nav-key"><a href="#">CONTEMPORÁNEAS</a></li>
+            <!-- ARGENTINAS CON SUBMENÚ -->
+            <li class="nav-key has-submenu group">
+            <a href="argentinas.html" class="submenu-toggle">ARGENTINAS</a>
+            <ul class="submenu ml-4 mt-2 space-y-2">
+            <li><a href="romina.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition">
+            >Romina Cohn</a>
+            </li>
+            <li><a href="ana.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition">
+            >Ana Helder</a>
+            </li>
+            <li><a href="ignacia.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition">
+            >Ignacia</a>
+            <li><a href="nait.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition">
+            >Nait Saves</a>
+            </li>
+            </ul>
+            </li>
+            <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+            <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+            <li class="nav-key"><a href="contacto.html">CONTACTO</a></li> 
+            <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
+        </ul>
+        </nav>
+
+        <!-- CONTENIDO  -->
+    <main class="juego-main flex-1 p-4 md:ml-64 overflow-y-auto flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-2xl">
+
+        <h1 class="text-3xl font-bold mb-2 text-center">SIMONA MUSICAL</h1>
+        <p id="level" class="mb-4 text-center">Nivel: 1</p>
+
+        <div id="game" class="grid grid-cols-2 md:grid-cols-4 gap-3 w-full">
+            <div class="pad" data-id="0"></div>
+            <div class="pad" data-id="1"></div>
+            <div class="pad" data-id="2"></div>
+            <div class="pad" data-id="3"></div>
+            <div class="pad" data-id="4"></div>
+            <div class="pad" data-id="5"></div>
+            <div class="pad" data-id="6"></div>
+            <div class="pad" data-id="7"></div>
+        </div>
+
+        <div class="flex justify-center">
+            <button id="start" class="mt-4 px-6 py-2 border border-purple-500 rounded-full
+                hover:bg-purple-600 hover:text-white transition-all duration-300">
+                Comenzar
+            </button>
+        </div>
+
+    </div>
+
+    </div>
+
 </main>
+
+<!-- FOOTER -->
+    <footer class="relative text-white text-center py-6 overflow-hidden">
+
+    <!-- FONDO ANIMADO -->
+    <div class="absolute inset-0 ambient-bg"
+         style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10">
+        <p class="text-sm md:text-base">
+            Mujeres en la Música Electrónica - Victoria Melina<br>
+            Informática General 2025
+        </p>
+    </div>
+
+</footer>
+
 <script src="js/main.js"></script>
 <script src="js/juego.js"></script>
+
 </body>
 </html>
     
