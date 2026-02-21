@@ -14,7 +14,9 @@
     toggle.addEventListener("click", function (e) {
       e.stopPropagation();
       menu.classList.toggle("-translate-x-full");
+      toggle.classList.toggle("hidden");
     });
+    
   }
 
   // Submenús en mobile
@@ -44,6 +46,7 @@
 
       if (!insideMenu && !clickedToggle) {
         menu.classList.add("-translate-x-full");
+        toggle.classList.remove("hidden"); 
         document.querySelectorAll(".submenu").forEach(sub => sub.style.display = "");
       }
     }

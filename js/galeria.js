@@ -5,8 +5,9 @@ let animationId = null;
 
 items.forEach(item => {
     const indicator = item.querySelector(".gallery-overlay span");
-    const progressBar = item.closest(".gallery-wrapper").querySelector(".progress-bar");
-    const container = item.closest(".gallery-wrapper").querySelector(".progress-bar-container");
+    const wrapper = item.closest(".gallery-wrapper");
+    const progressBar = wrapper.querySelector(".progress-bar");
+    const container = wrapper.querySelector(".progress-bar-container");
 
     // Click en la barra de progreso
     container.addEventListener("click", (e) => {
@@ -15,6 +16,7 @@ items.forEach(item => {
             const rect = container.getBoundingClientRect();
             const ratio = (e.clientX - rect.left) / rect.width;
             currentHowl.seek(ratio * currentHowl.duration());
+            progressBar.style.width = (ratio * 100) + "%";
         }
     });
 
@@ -23,41 +25,55 @@ items.forEach(item => {
         e.stopPropagation();
         const src = item.dataset.audio;
 
-        
         // Detener el anterior
-if (currentHowl && currentItem !== item) {
-    currentHowl.stop();
-    currentItem.querySelector(".gallery-overlay span").textContent = "🎵";
-    currentItem.closest(".gallery-wrapper").querySelector(".progress-bar").style.width = "0%";
-    cancelAnimationFrame(animationId);
-}
+        if (currentHowl && currentItem !== item) {
+            currentHowl.stop();
+            currentItem.querySelector(".gallery-overlay span").textContent = "▶";
+            currentItem.closest(".gallery-wrapper").querySelector(".progress-bar").style.width = "0%";
+            currentItem.classList.remove("playing");
+            cancelAnimationFrame(animationId);
+            currentHowl = null;
+        }
 
         // Pausar si ya está sonando
         if (currentHowl && currentItem === item && currentHowl.playing()) {
             currentHowl.pause();
-            indicator.textContent = "🎵";
+            indicator.textContent = "▶";
             cancelAnimationFrame(animationId);
             return;
         }
 
-        // Reproducir nuevo
-        if (currentItem !== item || !currentHowl) {
-            currentHowl = new Howl({
-                src: [src],
-                html5: true,
-                onend: () => {
-                    indicator.textContent = "🎵";
-                    updateProgress();
-                    progressBar.style.width = "0%";
-                }
-            });
+        // Reanudar si está pausado
+        if (currentHowl && currentItem === item && !currentHowl.playing()) {
+            currentHowl.play();
+            indicator.textContent = "⏸";
+            item.classList.add("playing");
+            updateProgress();
+            return;
         }
 
-        currentHowl.play();
-        currentItem = item;
-        indicator.textContent = "⏸";
+        // Reproducir nuevo
+        currentHowl = new Howl({
+            src: [src],
+            html5: true,
+            onload: () => {
+                currentHowl.play();
+                indicator.textContent = "⏸";
+                item.classList.add("playing");
+                updateProgress();
+            },
+            onend: () => {
+                indicator.textContent = "▶";
+                progressBar.style.width = "0%";
+                item.classList.remove("playing");
+            }
+        });
 
-        // Animación de progreso
+
+        currentItem = item;
+
+
+
         function updateProgress() {
             if (currentHowl && currentHowl.playing()) {
                 const ratio = currentHowl.seek() / currentHowl.duration();
@@ -65,14 +81,6 @@ if (currentHowl && currentItem !== item) {
                 animationId = requestAnimationFrame(updateProgress);
             }
         }
-        updateProgress();
     });
+
 });
-function updateProgress() {
-    if (currentHowl && currentHowl.playing()) {
-        const ratio = currentHowl.seek() / currentHowl.duration();
-        console.log("ratio:", ratio, "progressBar:", progressBar); // ← agregá esto
-        progressBar.style.width = (ratio * 100) + "%";
-        animationId = requestAnimationFrame(updateProgress);
-    }
-}

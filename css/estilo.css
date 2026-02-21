@@ -58,6 +58,14 @@ li.has-submenu > .submenu {
     transition: transform 0.3s ease;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
 /* ── MOBILE: menú vertical con scroll ── */
 @media (max-width: 768px) {
     #sidebar {
@@ -82,6 +90,7 @@ li.has-submenu > .submenu {
         padding: 18px 20px;
     }
 }
+
 
 @media (min-width: 768px) {
     #sidebar {
