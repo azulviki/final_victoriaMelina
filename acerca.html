@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pioneras</title>
+    <title>Mujeres en la Música Electrónica</title>
 
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-black text-white font-sans
@@ -45,12 +47,12 @@
          <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
 
 
+    <!--CONTENEDOR-->
 
-      <!--CONTENEDOR-->
-      <div class="flex flex-1 w-full">
+    <div class="flex flex-1 w-full">
 
 
-       <!-- MENÚ LATERAL -->
+        <!-- MENÚ LATERAL -->
         <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
         <ul class="font-open flex flex-col w-full my-auto">
         <li class="nav-key"><a href="home.html">INICIO</a></li>
@@ -71,7 +73,7 @@
             </li>
             <!-- EXPERIMENTALES CON SUBMENÚ -->
             <li class="nav-key has-submenu group">
-            <a href="experimentales.html class=submenu-toggle">EXPERIMENTALES</a>
+            <a href="experimentales.html" class="submenu-toggle">EXPERIMENTALES</a>
             <ul class="submenu ml-4 mt-2 space-y-2">
             <li><a href="daphne.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
             >>Daphne Oram</a>
@@ -89,7 +91,7 @@
             </li>
             <!-- POPULARES CON SUBMENÚ -->
             <li class="nav-key has-submenu group">
-            <a href="populares.html class=submenu-toggle">POPULARES</a>
+            <a href="populares.html" class="submenu-toggle">POPULARES</a>
             <ul class="submenu ml-4 mt-2 space-y-2">
             <li><a href="wendy.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition"
             >>Wendy Carlos</a>
@@ -106,7 +108,7 @@
             <li class="nav-key"><a href="#">CONTEMPORÁNEAS</a></li>
             <!-- ARGENTINAS CON SUBMENÚ -->
             <li class="nav-key has-submenu group">
-            <a href="argentinas.html class=submenu-toggle">ARGENTINAS</a>
+            <a href="argentinas.html" class="submenu-toggle">ARGENTINAS</a>
             <ul class="submenu ml-4 mt-2 space-y-2">
             <li><a href="romina.html" class="submenu-link block bg-black text-white px-3 py-2 text-sm hover:bg-purple-800 transition">
             >Romina Cohn</a>
@@ -124,8 +126,10 @@
             <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
             <li class="nav-key"><a href="juego.html">JUEGO</a></li>
             <li class="nav-key"><a href="contacto.html">CONTACTO</a></li> 
-            </ul>
+            <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
+        </ul>
         </nav>
+
 
 
         <!-- CONTENIDO -->
@@ -135,76 +139,51 @@
 
             <div class="max-w-3xl">  
 
-
         <!-- Título principal -->
-        <h1 class="text-5xl md:text-6xl font-bold mt-16 mb-6">
-            PIONERAS
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            ¿A qué llamamos “música electrónica”?
         </h1>
-        <!-- Subtítulo / párrafo introductorio -->
-        <p class="text-lg md:text-2xl text-gray-400 font-light mb-12">
-            Aunque poco se hable de ellas, han sido fundamentales para el desarrollo de la música electrónica. Su trabajo ha sido esencial para sentar las bases de lo que hoy conocemos.</p>
-        
-            <!-- Subtítulo 1 -->
-        <h2 class="text-2xl md:text-3xl font-semibold  mb-6">
-            Primeras tecnologías y pioneras (1890–1950)
-        </h2>
+            
 
         <!-- Primer párrafo de sección -->
         <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            Los primeros antecedentes de la música electrónica aparecen a fines del siglo 
-            XIX, en un contexto marcado por la expansión de la electricidad, 
-            los avances en telecomunicaciones y el entusiasmo por la ciencia y 
-            el progreso tecnológico. En este período surgen los primeros instrumentos 
-            capaces de generar sonido mediante electricidad, como el Telharmonium (1897), 
-            un gigantesco aparato que producía tonos eléctricos transmitidos por líneas 
-            telefónicas.
+            La música electrónica es aquella que utiliza dispositivos eléctricos, 
+            electrónicos o digitales para generar, procesar o reproducir sonidos.
+             A diferencia de la música acústica tradicional, donde el sonido se produce 
+             mediante la vibración física de cuerdas, membranas o columnas de aire, en la música 
+             electrónica el sonido puede surgir directamente de circuitos eléctricos, osciladores o 
+             sistemas digitales, o bien de la manipulación tecnológica de sonidos grabados.
+
         </p>
 
         <!-- Segundo párrafo de sección -->
        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            A comienzos del siglo XX aparecen otros instrumentos fundamentales, 
-            como el theremin (1919), las ondas Martenot (1928) y el trautonium (1930). 
-            Estos dispositivos, basados en circuitos electrónicos y osciladores, permitían 
-            crear timbres completamente nuevos, ajenos a los instrumentos acústicos 
-            tradicionales. En ese momento, la música electrónica estaba estrechamente 
-            vinculada a la experimentación científica y a una estética futurista que celebraba 
-            el sonido de las máquinas y la modernidad.</p>
+            Sin embargo, el concepto de música electrónica no tiene un único 
+            origen ni una definición fija. Se trata de un campo que ha evolucionado 
+            junto con los avances tecnológicos y científicos de cada época y variando 
+            según cada lugar del mundo. </p>
 
         <!-- Tercer párrafo de sección -->
         <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-16">
-            En este primer período —fines del siglo XIX hasta la década de 1930— 
-            la presencia femenina es más visible en la interpretación, la experimentación
-            artística y la composición que en la invención de dispositivos. Esto tiene que 
-            ver con el contexto histórico: los laboratorios, universidades y ámbitos de 
-            ingeniería estaban casi exclusivamente ocupados por hombres, lo que limitó el 
-            acceso de las mujeres a los desarrollos técnicos.
-        </p>
-        <!-- Cuarto párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-16">
-            De cualquier modo, algunos de sus nombres trascendieron:</p>
+           Por eso, su historia se puede entender como el resultado de una 
+           serie de transformaciones técnicas, culturales y estéticas que 
+           comienzan a fines del siglo XIX y continúan hasta la actualidad.
+
+        </p>      
     </div>
-    </div>
-             <!-- Nombres y fotos de las pioneras -->
-             <div class="flex flex-col md:flex-row justify-center items-start md:space-x-8 space-y-8 md:space-y-0 mt-16 md:ml-12">
 
-             <!-- Clara Rockmore -->
-             <a href="clara.html" class="flex flex-col items-center bg-black text-white px-6 py-4 w-full md:w-auto hover:bg-purple-800 transition">
-             <span class="text-lg font-semibold mb-2">Clara Rockmore</span>
-             <img src="img/clara.jpg" alt="Clara Rockmore" class="w-32 h-32 object-cover rounded-md"></a>
+    <!-- IMAGEN -->
+        <div class="md:flex-1 md:flex-shrink-0 relative group">
+            <img src="img/sinte.jpg" alt="sintetizador" class="w-full h-full rounded-lg transition-opacity duration-300 group-hover:opacity-30">
+            <!-- Overlay con descripción -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+        <p class="text-white text-center md:text-base font-roboto text-3xl">Sintetizador Arturia Modular V</p>
+        </div>
+        </div>
 
-             <!-- Johanna Beyer -->
-             <a href="johanna.html" class="flex flex-col items-center bg-black text-white px-6 py-4 w-full md:w-auto hover:bg-purple-800 transition">
-             <span class="text-lg font-semibold mb-2">Johanna Beyer</span>
-             <img src="img/johanna.jpg" alt="Johanna Beyer" class="w-32 h-32 object-cover rounded-md"></a>
-
-             <!-- Mary Hallock-Greenewalt -->
-             <a href="mary.html" class="flex flex-col items-center bg-black text-white px-6 py-4 w-full md:w-auto hover:bg-purple-800 transition">
-             <span class="text-lg font-semibold mb-2">Mary Hallock-Greenewalt</span>
-             <img src="img/mary.jpg" alt="Mary Hallock-Greenewalt" class="w-32 h-32 object-cover rounded-md"></a>
-
-             </div>
-    
+   </div>
 </div>
+
 </main>
 
 <!-- FOOTER -->
@@ -224,10 +203,10 @@
     </div>
 
 </footer>
+
     
 <script src="js/main.js"></script>
 
 </body>
-
 
 </html>
