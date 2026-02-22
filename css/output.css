@@ -733,6 +733,10 @@ video {
   display: none;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-32 {
   height: 8rem;
 }
