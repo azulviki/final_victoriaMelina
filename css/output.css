@@ -713,6 +713,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -1028,6 +1032,10 @@ video {
 
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .text-center {

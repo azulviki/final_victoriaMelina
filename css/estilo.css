@@ -259,3 +259,8 @@ footer {
     background-color: #6b21a8;
     color: white;
 }
+
+iframe {
+    margin-bottom: 5rem;
+    display: block;
+}
