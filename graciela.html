@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graciela Paraskevaídis</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/artista.css">
+</head>
+
+<body class="bg-black text-white font-sans flex flex-col min-h-screen">
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 bg-black z-50 p-2 rounded">☰</button>
+
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden z-10">
+        <canvas id="oscilloscope" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+        <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+            <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
+                <a href="index.html">
+                    <h1 class="md:text-2xl font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                        L A M U J E R <br class="md:hidden"> E N L A M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                    </h1>
+                </a>
+            </div>
+            <button id="muteBtn" class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">🔊</button>
+        </div>
+    </header>
+
+    <!-- AUDIO -->
+    <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+
+   
+
+<!-- CONTENEDOR -->
+<div class="flex flex-1 w-full">
+
+
+
+        <!-- MENÚ LATERAL -->
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+            <ul class="font-open flex flex-col w-full my-auto">
+                <li class="nav-key"><a href="home.html">INICIO</a></li>
+                <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
+                <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
+                <li class="nav-key"><a href="populares.html">POPULARES</a></li>
+                <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
+                <li class="nav-key"><a href="#">CONTEMPORÁNEAS</a></li>
+                <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
+                <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+                <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+                <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
+                <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
+            </ul>
+        </nav>
+
+        <!-- CONTENIDO -->
+        <main class="flex-1 md:ml-64 overflow-y-auto">
+
+            <!-- HERO -->
+            <div class="artista-hero">
+                <div class="artista-hero-img">
+                    <img src="img/galeria/graciela.jpg" alt="Graciela Paraskevaídis">
+                </div>
+                <div class="artista-hero-overlay"></div>
+                <div class="artista-hero-content">
+                    <p class="artista-categoria">POPULARES </p>
+                    <h1 class="artista-nombre">Graciela Paraskevaídis</h1>
+                    <div class="artista-linea"></div>
+                    <p class="artista-subtitulo">Musicóloga y Compositora</p>
+                </div>
+            </div>
+
+            <!-- DATOS Y BIO -->
+            <div class="p-6 md:pl-24 md:pr-16 mt-12">
+
+                <div class="flex flex-col md:flex-row gap-12">
+
+                    <!-- DATOS CLAVE -->
+                    <div class="artista-datos">
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Nacimiento</span>
+                            <span class="artista-dato-valor">1 de abril de 1940</span>
+                            <span class="artista-dato-lugar">Buenos Aires, Argentina</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Fallecimiento</span>
+                            <span class="artista-dato-valor">21 de febrero de 2017</span>
+                            <span class="artista-dato-lugar">Montevideo, Uruguay</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Nacionalidad</span>
+                            <span class="artista-dato-valor">Argentina y uruguaya</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Instrumento</span>
+                            <span class="artista-dato-valor">Compositora</span>
+                        </div>
+
+                        <!-- LINK YOUTUBE -->
+                        <a href="https://www.youtube.com/results?search_query=Graciela+Paraskevaídis" 
+                           target="_blank"
+                           class="artista-yt-btn">
+                            ▶ Ver en YouTube
+                        </a>
+                    </div>
+
+                    <!-- BIO -->
+                    <div class="max-w-2xl">
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        Estudió composición en el Conservatorio Nacional de Música con Roberto García Morillo. Fue becaria del extinto Centro Latinoamericano de Altos Estudios Musicales (CLAEM) perteneciente al Instituto Torcuato Di Tella, donde fue alumna de Iannis Xenakis y Gerardo Gandini (1965-66), y del Servicio Alemán de Intercambio Académico (Deutscher Akademischer Austauschdienst) con Wolfgang Fortner como uno de sus docentes (1968-71). En 1975 se radicó en Uruguay. Se dedicó a la docencia privada y entre 1985 y 1992 ocupó un cargo docente en la Escuela Universitaria de Música de la Universidad de la República de Montevideo. Residió en Alemania como artista invitada en Berlín (Programa de Artistas en Residencia, 1984) y en Stuttgart (Akademie Schloss Solitude, 1998)
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                           Sus composiciones han sido premiadas e interpretadas en varios países de América, Europa y Asia. Trabajos suyos han sido editados por sellos discográficos de Alemania, Bolivia, Brasil y Uruguay. Editó tres monográficos en el sello Tacuabé de Montevideo: Magma (nueve composiciones, 1996), Libres en el sonido (siete composiciones, 2003) y Contra la olvidación (nueve composiciones, 2012).
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            Escribió los libros La obra sinfónica de Eduardo Fabini (Ediciones Trilce, Montevideo, 1992) y Luis Campodónico, compositor (Tacuabé, Montevideo, 1999) además de numerosos ensayos sobre música contemporánea de América Latina. Tradujo Los signos de Schoenberg (Schoenbergs Zeichen) de Jean-Jacques Dünki (Monte Ávila, Caracas, 2005).
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            Recibió varias distinciones, entre ellas la Medalla Goethe del Instituto Goethe de Múnich (1994) y el Premio Morosoli de Plata de Uruguay (2006). Asistió al Primer Simposio de Artistas e Intelectuales de origen griego en 1985, a invitación del gobierno de Grecia.
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="relative text-white text-center py-6 overflow-hidden">
+        <div class="absolute inset-0 ambient-bg"
+             style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+        </div>
+        <div class="relative z-10">
+            <p class="text-sm md:text-base">
+                Mujeres en la Música Electrónica - Victoria Mellina<br>
+                Informática General 2025
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilda Dianda</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/artista.css">
+</head>
+
+<body class="bg-black text-white font-sans flex flex-col min-h-screen">
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 bg-black z-50 p-2 rounded">☰</button>
+
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden z-10">
+        <canvas id="oscilloscope" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+        <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+            <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
+                <a href="index.html">
+                    <h1 class="md:text-2xl font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                        L A M U J E R <br class="md:hidden"> E N L A M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                    </h1>
+                </a>
+            </div>
+            <button id="muteBtn" class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">🔊</button>
+        </div>
+    </header>
+
+    <!-- AUDIO -->
+    <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+
+   
+
+<!-- CONTENEDOR -->
+<div class="flex flex-1 w-full">
+
+
+
+        <!-- MENÚ LATERAL -->
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+            <ul class="font-open flex flex-col w-full my-auto">
+                <li class="nav-key"><a href="home.html">INICIO</a></li>
+                <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
+                <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
+                <li class="nav-key"><a href="populares.html">POPULARES</a></li>
+                <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
+                <li class="nav-key"><a href="#">CONTEMPORÁNEAS</a></li>
+                <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
+                <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+                <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+                <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
+                <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
+            </ul>
+        </nav>
+
+        <!-- CONTENIDO -->
+        <main class="flex-1 md:ml-64 overflow-y-auto">
+
+            <!-- HERO -->
+            <div class="artista-hero">
+                <div class="artista-hero-img">
+                    <img src="img/galeria/hilda.jpg" alt="Hilda Dianda">
+                </div>
+                <div class="artista-hero-overlay"></div>
+                <div class="artista-hero-content">
+                    <p class="artista-categoria">EXPERIMENTALES</p>
+                    <h1 class="artista-nombre">Hilda Dianda</h1>
+                    <div class="artista-linea"></div>
+                    <p class="artista-subtitulo">Directora de orquesta</p>
+                </div>
+            </div>
+
+            <!-- DATOS Y BIO -->
+            <div class="p-6 md:pl-24 md:pr-16 mt-12">
+
+                <div class="flex flex-col md:flex-row gap-12">
+
+                    <!-- DATOS CLAVE -->
+                    <div class="artista-datos">
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Nacimiento</span>
+                            <span class="artista-dato-valor">13 de abril de 1925</span>
+                            <span class="artista-dato-lugar">Córdoba, Argentina</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Fallecimiento</span>
+                            <span class="artista-dato-valor">7 de agosto de 2014</span>
+                            <span class="artista-dato-lugar">Buenos Aires, Argentina</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Nacionalidad</span>
+                            <span class="artista-dato-valor">Argentina</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Instrumento</span>
+                            <span class="artista-dato-valor">Compositora</span>
+                        </div>
+
+                        <!-- LINK YOUTUBE -->
+                        <a href="https://www.youtube.com/results?search_query=Hilda+Dianda" 
+                           target="_blank"
+                           class="artista-yt-btn">
+                            ▶ Ver en YouTube
+                        </a>
+                    </div>
+
+                    <!-- BIO -->
+                    <div class="max-w-2xl">
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            Estudió en Buenos Aires con Honorio Siccardi y en Europa con Gian Francesco Malipiero y Hermann Scherchen. En 1958 se trasladó a Francia y se puso en contacto con el "Grupo de Investigaciones musicales", dirigido por Pierre Schaeffer. Fue invitada por la RAI para trabajar en el Estudio de Fonología, donde realizó diversas experiencias e investigaciones en el campo de la música electrónica.
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            Desde 1960 hasta 1962 participó, como becaria, en los Cursos Internacionales de Nueva Música, en Darmstadt, Alemania. En 1964 recibió un homenaje del gobierno de Italia con la "Medalla al Mérito Cultural", en honor a sus actividades artísticas y profesionales. En 1966 el "San Fernando Valley State College de Northridge California" (Estados Unidos) la invitó a trabajar en su laboratorio de música electrónica. Desde 1967 hasta 1971 fue profesora en la "Escuela de Artes" de la Universidad Nacional de Córdoba, Argentina.
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            Varias obras de Hilda Dianda han sido incorporadas a los programas de diversas universidades e instituciones musicales de Europa y Norteamérica, como exponentes actuales de la creación musical. Como musicóloga se ha dedicado principalmente a la música contemporánea, y ha colaborado en radios y diversas publicaciones de la Argentina y del exterior, así como en seminarios, cursos y conferencias. En 1980, en reconocimiento de su trayectoria, el gobierno de Francia la nombra "Caballero de la Orden de las Palmas Académicas".
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="relative text-white text-center py-6 overflow-hidden">
+        <div class="absolute inset-0 ambient-bg"
+             style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+        </div>
+        <div class="relative z-10">
+            <p class="text-sm md:text-base">
+                Mujeres en la Música Electrónica - Victoria Mellina<br>
+                Informática General 2025
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

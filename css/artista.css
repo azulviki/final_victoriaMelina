@@ -1,0 +1,148 @@
+/* ── PÁGINA DE ARTISTA ── */
+
+/* Hero */
+.artista-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.artista-hero-img {
+    width: 100%;
+    height: 100%;
+}
+
+.artista-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(30%);
+}
+
+.artista-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 20%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.95) 100%
+    );
+}
+
+.artista-hero-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+}
+
+.artista-main {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .artista-hero {
+        margin-left: 5rem;
+        width: calc(100% - 5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .artista-main {
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+.artista-categoria {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: #8B5CF6;
+    margin-bottom: 0.5rem;
+}
+
+.artista-nombre {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .artista-nombre {
+        font-size: 5rem;
+    }
+}
+
+.artista-linea {
+    width: 4rem;
+    height: 2px;
+    background: #8B5CF6;
+    margin-bottom: 1rem;
+}
+
+.artista-subtitulo {
+    font-size: 1rem;
+    color: #9ca3af;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+/* Datos clave */
+.artista-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 200px;
+    border-left: 1px solid #222;
+    padding-left: 1.5rem;
+}
+
+.artista-dato {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.artista-dato-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: #8B5CF6;
+    text-transform: uppercase;
+}
+
+.artista-dato-valor {
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 500;
+}
+
+.artista-dato-lugar {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+/* Botón YouTube */
+.artista-yt-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #8B5CF6;
+    border-radius: 9999px;
+    color: #8B5CF6;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.artista-yt-btn:hover {
+    background-color: #8B5CF6;
+    color: white;
+}

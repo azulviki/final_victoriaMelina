@@ -3,87 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mujeres en la Música Electrónica</title>
-
+    <title>Mary Hallok Greenewlt</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/artista.css">
 </head>
 
-<body class="bg-black text-white font-sans
-             bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.15),transparent_60%)]">
+<body class="bg-black text-white font-sans flex flex-col min-h-screen">
 
     <!-- BOTÓN HAMBURGUESA -->
-    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 z-50 bg-black">☰</button>
+    <button id="menu-toggle" class="md:hidden fixed top-2 left-2 bg-black z-50 p-2 rounded">☰</button>
 
-    <div class="flex min-h-screen">
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden z-10">
+        <canvas id="oscilloscope" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+        <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+            <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
+                <a href="index.html">
+                    <h1 class="md:text-2xl font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                        L A M U J E R <br class="md:hidden"> E N L A M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                    </h1>
+                </a>
+            </div>
+            <button id="muteBtn" class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">🔊</button>
+        </div>
+    </header>
+
+    <!-- AUDIO -->
+    <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+
+   
+
+<!-- CONTENEDOR -->
+<div class="flex flex-1 w-full">
+
+
 
         <!-- MENÚ LATERAL -->
-        <nav id="sidebar"
-             class="fixed md:static top-0 left-0 h-full w-64 bg-black border-r border-gray-800
-                    transform -translate-x-full md:translate-x-0
-                    transition-transform duration-300 z-40">
-
-            <a href="index.html" class="block p-6 text-xl font-bold tracking-widest hover:text-purple-400 transition-colors">
-                LA MUJER <br> EN LA MÚSICA <br> ELECTRÓNICA
-            </a>
-
-            <ul class="flex flex-col">
-                <li class="nav-key"><a href="home.html">Inicio</a></li>
-                <!-- PIONERAS CON SUBMENÚ -->
-                <li class="nav-key group">
-                <a href="pioneras.html">Pioneras</a>
-                <!-- Submenú -->
-                <ul class="ml-4 mt-2 space-y-2 hidden group-hover:block">
-                <li><a href="clara.html"class="block bg-black text-white px-3 py-2 text-sm
-                  hover:bg-purple-800 transition">Clara Rockmore</a>
-                </li>
-                <li><a href="johanna.html" class="block bg-black text-white px-3 py-2 text-sm
-                  hover:bg-purple-800 transition">Johanna Beyer</a>
-                </li>
-                <li><a href="mary.html"class="block bg-black text-white px-3 py-2 text-sm
-                  hover:bg-purple-800 transition">Mary Hallock-Greenewalt</a>
-                </li>
-                </ul>
-                <li class="nav-key"><a href="#">Años 70–80</a></li>
-                <li class="nav-key"><a href="#">Techno y House</a></li>
-                <li class="nav-key"><a href="#">Experimental</a></li>
-                <li class="nav-key"><a href="#">Actualidad</a></li>
-                <li class="nav-key"><a href="#">Latinoamérica</a></li>
-                <li class="nav-key"><a href="galeria.html">Galería</a></li>
-                <li class="nav-key"><a href="juego.html">Juego</a></li>
-                <li class="nav-key"><a href="contacto.html">Contacto</a></li> 
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+            <ul class="font-open flex flex-col w-full my-auto">
+                <li class="nav-key"><a href="home.html">INICIO</a></li>
+                <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
+                <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
+                <li class="nav-key"><a href="populares.html">POPULARES</a></li>
+                <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
+                <li class="nav-key"><a href="#">CONTEMPORÁNEAS</a></li>
+                <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
+                <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+                <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+                <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
+                <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
             </ul>
         </nav>
 
         <!-- CONTENIDO -->
-    <main class="flex-1 p-6 md:ml-64">
-    <div class="max-w-3xl md:ml-12 mt-12">
+        <main class="flex-1 md:ml-64 overflow-y-auto">
 
-        <!-- Título principal -->
-        <h1 class="text-5xl md:text-6xl font-bold mt-16 mb-6">
-            Mary Hallock-Greenewalt (1871–1950)
+            <!-- HERO -->
+            <div class="artista-hero">
+                <div class="artista-hero-img">
+                    <img src="img/mary.jpg" alt="Mary Hallok Greenewlt">
+                </div>
+                <div class="artista-hero-overlay"></div>
+                <div class="artista-hero-content">
+                    <p class="artista-categoria">PIONERAS</p>
+                    <h1 class="artista-nombre">Mary Hallok Greenewlt</h1>
+                    <div class="artista-linea"></div>
+                    <p class="artista-subtitulo">Inventora pianista</p>
+                </div>
+            </div>
 
-        </h1>
+            <!-- DATOS Y BIO -->
+            <div class="p-6 md:pl-24 md:pr-16 mt-12">
 
-        <!-- Subtítulo / párrafo introductorio -->
-       
+                <div class="flex flex-col md:flex-row gap-12">
 
-        <!-- Subtítulo 1 -->
-        
+                    <!-- DATOS CLAVE -->
+                    <div class="artista-datos">
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Nacimiento</span>
+                            <span class="artista-dato-valor">8 de septiembre de 1871</span>
+                            <span class="artista-dato-lugar"> Beirut, Siria</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Fallecimiento</span>
+                            <span class="artista-dato-valor">27 de noviembre de 1950</span>
+                            <span class="artista-dato-lugar">Philadelphia, Estados Unidos</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Nacionalidad</span>
+                            <span class="artista-dato-valor">Estadounidense</span>
+                        </div>
+                        <div class="artista-dato">
+                            <span class="artista-dato-label">Instrumento</span>
+                            <span class="artista-dato-valor">Piano</span>
+                        </div>
 
-        <!-- Primer párrafo de sección -->
-        
+                        <!-- LINK YOUTUBE -->
+                        <a href="https://www.youtube.com/watch?v=T4mmUIsMNgI&list=PLvYDBtDhXXaZqCjyIesh05daVVTVD9tky" 
+                           target="_blank"
+                           class="artista-yt-btn">
+                            ▶ Ver en YouTube
+                        </a>
+                    </div>
 
-        <!-- Segundo párrafo de sección -->
-       
+                    <!-- BIO -->
+                    <div class="max-w-2xl">
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            El nombre de su arte, Nourathar, fue adaptado de las palabras árabes para luz (nour), y esencia de (athar). A diferencia de anteriores inventores de la música-color como el pintor A. Wallace Rimington, Hallock-Greenewalt no produjo una definición estricta de correspondencia entre colores específicos y notas particulares, sosteniendo en su lugar que estas relaciones eran inherentemente variables y reflejaban el temperamento y la habilidad del intérprete.
+                        </p>
+                        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                            Su órgano de color, al cual bautizó "Sarabet" en homenaje a su madre, requirió la invención de un número de tecnologías nuevas. Recibió nueve patentes de la Oficina de Patentes de los Estados Unidos por ellas. Entre estos dispositivos se cuenta una variedad no lineal de reostato, una patente que fue infringida por General Electric y otras compañías. Greenewalt los demandó por dicha infracción y ganó en 1934. El Sarabet pasó por una serie de refinamientos entre 1916 y 1934. En 1946 publicó un libro sobre el arte de su invención llamado Nourathar: El Bello Arte de Tocar Luz-Color.
+                        </p>
 
-        <!-- Tercer párrafo de sección -->
-        
+                    </div>
 
+                </div>
+
+
+            </div>
+        </main>
     </div>
-</main>
+
+    <!-- FOOTER -->
+    <footer class="relative text-white text-center py-6 overflow-hidden">
+        <div class="absolute inset-0 ambient-bg"
+             style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+        </div>
+        <div class="relative z-10">
+            <p class="text-sm md:text-base">
+                Mujeres en la Música Electrónica - Victoria Mellina<br>
+                Informática General 2025
+            </p>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
