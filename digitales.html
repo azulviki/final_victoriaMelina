@@ -20,192 +20,189 @@
     <!-- HEADER -->
     <header class="relative w-full overflow-hidden z-10">
 
-    <!-- CANVAS OSCILOSCOPIO -->
-    <canvas id="oscilloscope"
-            class="absolute inset-0 w-full h-full opacity-40"></canvas>
+        <!-- CANVAS OSCILOSCOPIO -->
+        <canvas id="oscilloscope"
+                class="absolute inset-0 w-full h-full opacity-40"></canvas>
 
-    <!-- CONTENIDO -->
-    <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
-        <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
-            <a href="index.html">
-                <h1 class="md:text-2xl m font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
-                    L A M U J E R <br class="md:hidden"> E N L A  M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
-                </h1>
-            </a>
+        <!-- CONTENIDO -->
+        <div class="relative z-10 p-6 md:p-8 flex items-center justify-between">
+            <div class="max-w-3xl md:ml-64 md:pl-12 pl-10">
+                <a href="index.html">
+                    <h1 class="md:text-2xl font-roboto text-violet-800 hover:text-indigo-400 leading-tight">
+                        L A M U J E R <br class="md:hidden"> E N L A  M Ú S I C A <br class="md:hidden"> E L E C T R Ó N I C A
+                    </h1>
+                </a>
+            </div>
+
+            <button id="muteBtn"
+                    class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">
+                🔊
+            </button>
         </div>
-
-        <button id="muteBtn"
-                class="text-sm px-3 py-1 border border-gray-600 rounded hover:bg-gray-800 transition">
-            🔊
-        </button>
-    </div>
 
     </header>
 
-    
-         <!-- AUDIO -->
-         <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
+    <!-- AUDIO -->
+    <audio id="ambientAudio" src="audio/ambient.mp3" loop></audio>
 
+    <!--CONTENEDOR-->
+    <div class="flex flex-1 w-full">
 
-
-      <!--CONTENEDOR-->
-      <div class="flex flex-1 w-full">
-
-
-       <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
-        <ul class="font-open flex flex-col w-full my-auto">
-        <li class="nav-key"><a href="home.html">INICIO</a></li>
-        <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
-        <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
-        <li class="nav-key"><a href="populares.html">POPULARES</a></li>
-        <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
-        <li class="nav-key"><a href="contemporaneas.html">CONTEMPORÁNEAS</a></li>
-        <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
-        <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
-        <li class="nav-key"><a href="juego.html">JUEGO</a></li>
-        <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
-        <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
-        </ul>
+        <!-- MENÚ LATERAL -->
+        <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
+            <ul class="font-open flex flex-col w-full my-auto">
+                <li class="nav-key"><a href="home.html">INICIO</a></li>
+                <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
+                <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
+                <li class="nav-key"><a href="populares.html">POPULARES</a></li>
+                <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
+                <li class="nav-key"><a href="contemporaneas.html">CONTEMPORÁNEAS</a></li>
+                <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
+                <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+                <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+                <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
+                <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
+            </ul>
         </nav>
 
-
         <!-- CONTENIDO -->
-    <main class="flex-1 p-6 md:ml-64 overflow-y-auto">
+        <main class="flex-1 p-6 md:ml-64 overflow-y-auto">
 
-        <div class="flex flex-col md:flex-row gap-8 md:ml-12 mt-12">     
+            <div class="flex flex-col md:flex-row gap-8 md:ml-12 mt-12">
 
-            <div class="max-w-3xl">  
+                <div class="max-w-3xl">
 
+                    <!-- Título principal -->
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        DIGITALES (1990–2010)
+                    </h1>
 
-        <!-- Título principal -->
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">
-           DIGITALES (1990–2010)
-        </h1>
+                    <!-- Subtítulo / párrafo introductorio -->
+                    <p class="text-lg md:text-2xl text-gray-400 font-light mb-12">
+                        Este período marca la expansión global de la música electrónica como cultura de masas, ya no solo como experimentación o nicho underground. La electrónica se vuelve música de clubes y raves. Industria global. <br> Lenguaje pop y mainstream.
+                    </p>
 
-        <!-- Subtítulo / párrafo introductorio -->
-        <p class="text-lg md:text-2xl text-gray-400 font-light mb-12">
-            Este período marca la expansión global de la música electrónica como cultura de masas, ya no solo como experimentación o nicho underground. La electrónica se vuelve música de clubes y raves. Industria global. <br> Lenguaje pop y mainstream.</p>
-        
-            <!-- Subtítulo 1 -->
-        <h2 class="text-2xl md:text-3xl font-semibold  mb-6">
-            Cultura de Clubes, Raves y Música Popular
-        </h2>
+                    <!-- Subtítulo 1 -->
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+                        Cultura de Clubes, Raves y Música Popular
+                    </h2>
 
-        <!-- Primer párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            Se consolida la cultura rave y clubbing en Reino Unido, Alemania, Estados Unidos con sus fiestas ilegales, warehouses, conciertos en fábricas abandonadas. 
-        </p>
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        Se consolida la cultura rave y clubbing en Reino Unido, Alemania, Estados Unidos con sus fiestas ilegales, warehouses, conciertos en fábricas abandonadas.
+                    </p>
 
-        <!-- Segundo párrafo de sección -->
-       <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-           Los estilos más escuchados son: techno, house, trance, jungle, drum & bass.
-       </p>
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        Los estilos más escuchados son: techno, house, trance, jungle, drum &amp; bass.
+                    </p>
 
-        <!-- Tercer párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            La computadora se vuelve el centro del estudio.
-            Nacen los DAWs modernos.
-            Se abarata el acceso a producir música.
-            Es el momento en que la música electrónica pasa de los laboratorios y estudios analógicos a los home studios digitales.
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        La computadora se vuelve el centro del estudio.
+                        Nacen los DAWs modernos.
+                        Se abarata el acceso a producir música.
+                        Es el momento en que la música electrónica pasa de los laboratorios y estudios analógicos a los home studios digitales.
+                    </p>
 
-        </p>
-        <!-- Cuarto párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            La transición de lo analógico a lo digital permitió el uso masivo de samplers digitales, cajas de ritmo y el standard MIDI como método universal para la producción.
-        </p>
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        La transición de lo analógico a lo digital permitió el uso masivo de samplers digitales, cajas de ritmo y el standard MIDI como método universal para la producción.
+                    </p>
 
-        <!-- Quinto párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            A fines de la década del 90 y con la popularización de la computadora surge una revolución clave: Aparición de VSTs (Virtual Studio Technology) en 1996, sintetizadores y efectos virtuales, producción completamente digital. Los softwares que aparecen, marcan tendencia y se siguen usando hasta nuestros días son: Ableton Live, Reason, FL Studio.
-        </p>
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        A fines de la década del 90 y con la popularización de la computadora surge una revolución clave: Aparición de VSTs (Virtual Studio Technology) en 1996, sintetizadores y efectos virtuales, producción completamente digital. Los softwares que aparecen, marcan tendencia y se siguen usando hasta nuestros días son: Ableton Live, Reason, FL Studio.
+                    </p>
 
-        <!-- Sexto párrafo de sección -->
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            La música electrónica se vuelve en fenómeno global, cada vez más popular y transversal a distintas clases sociales.
-            El o la dj tienen en sus manos las herramientas no solo para combinar sonidos y música en una cabina sino para producir sus propios tracks o mezclas.
-        </p>
-        
-        <h3 class="text-xl font-semibold text-white mb-3">Techno y House</h3>
-            <ul class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 list-none">
-            <li class="list-item">K-Hand (Kelli Hand).</li>
-            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-           Pionera del techno y house de Detroit.
-           Llamada la “First Lady” del techno de la ciudad.
-           </p>
-           <iframe  class="w-full aspect-video" src="https://www.youtube.com/embed/fEucYrelTcY?si=ZvJYq-c--C1Wm15R" title="K-Hand" frameborder="0" allowfullscreen>
-            </iframe>
-            <li class="list-item">Monika Kruse.</li>
-            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-           Figura clave de la escena rave alemana en los 90.
-           Fundadora del sello Terminal M.   
-            </p>
-            <iframe  class="w-full aspect-video" src="https://www.youtube.com/embed/Vb0g_WmVKrY?si=HIFs8cr-KZTh2EiN" title="K-Hand" frameborder="0" allowfullscreen>
-            </iframe>
-            </ul>
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                        La música electrónica se vuelve en fenómeno global, cada vez más popular y transversal a distintas clases sociales.
+                        El o la dj tienen en sus manos las herramientas no solo para combinar sonidos y música en una cabina sino para producir sus propios tracks o mezclas.
+                    </p>
 
-        <h3 class="text-xl font-semibold text-white mb-3">House y Cultura Club</h3>
-            <ul class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 list-none">
-            <li class="list-item">DJ Heather.</li>
-            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-           Figura central del deep house de Chicago en los 90 y 2000.
-            </p>
-            <iframe  class="w-full aspect-video" src="https://www.youtube.com/embed/FL75AGDOOBY?si=wqedbPv9LAqL-5wz" title="K-Hand" frameborder="0" allowfullscreen>
-            </iframe>
-            <li class="list-item">Smokin’ Jo.</li>
-            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-           DJ británica.
-           Primera mujer en ganar el premio DJ of the Year de DJ Magazine.
-            </p>
-            <iframe  class="w-full aspect-video" src="https://www.youtube.com/embed/kEtaX3CX8AE?si=fKKSkizySCQF1lW-" title="K-Hand" frameborder="0" allowfullscreen>
-            </iframe>
-            </ul>
+                    <!-- Techno y House -->
+                    <h3 class="text-xl font-semibold text-white mb-3">Techno y House</h3>
+                    <ul class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 list-none">
+                        <li class="list-item">
+                            <p class="font-semibold">K-Hand (Kelli Hand).</p>
+                            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                                Pionera del techno y house de Detroit.
+                                Llamada la "First Lady" del techno de la ciudad.
+                            </p>
+                            <iframe class="w-full aspect-video border-0" src="https://www.youtube.com/embed/fEucYrelTcY?si=ZvJYq-c--C1Wm15R" title="K-Hand" allowfullscreen></iframe>
+                        </li>
+                        <li class="list-item mt-10">
+                            <p class="font-semibold">Monika Kruse.</p>
+                            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                                Figura clave de la escena rave alemana en los 90.
+                                Fundadora del sello Terminal M.
+                            </p>
+                            <iframe class="w-full aspect-video border-0" src="https://www.youtube.com/embed/Vb0g_WmVKrY?si=HIFs8cr-KZTh2EiN" title="Monika Kruse" allowfullscreen></iframe>
+                        </li>
+                    </ul>
 
-        <h3 class="text-xl font-semibold text-white mb-3">Drum & bass y Escenas Queer</h3>
-            <ul class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 list-none">
-            <li class="list-item">Jordana LeSesne.</li>
-            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
-            Pionera trans del drum & bass en los años 90.
-            Fusionó ciencia ficción, política y música de club.
-            </p>
-            <div class="mb-8 rounded overflow-hidden">
-            <iframe  class="w-full aspect-video" src="https://www.youtube.com/embed/C2eyEV9mtqQ?si=LWsnaOq70yfGEp9v" title="K-Hand" frameborder="0" allowfullscreen>
-            </iframe>
-            </ul>
+                    <!-- House y Cultura Club -->
+                    <h3 class="text-xl font-semibold text-white mb-3">House y Cultura Club</h3>
+                    <ul class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 list-none">
+                        <li class="list-item">
+                            <p class="font-semibold">DJ Heather.</p>
+                            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                                Figura central del deep house de Chicago en los 90 y 2000.
+                            </p>
+                            <iframe class="w-full aspect-video border-0" src="https://www.youtube.com/embed/FL75AGDOOBY?si=wqedbPv9LAqL-5wz" title="DJ Heather" allowfullscreen></iframe>
+                        </li>
+                        <li class="list-item mt-10">
+                            <p class="font-semibold">Smokin' Jo.</p>
+                            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                                DJ británica.
+                                Primera mujer en ganar el premio DJ of the Year de DJ Magazine.
+                            </p>
+                            <iframe class="w-full aspect-video border-0" src="https://www.youtube.com/embed/kEtaX3CX8AE?si=fKKSkizySCQF1lW-" title="Smokin' Jo" allowfullscreen></iframe>
+                        </li>
+                    </ul>
+
+                    <!-- Drum & bass y Escenas Queer -->
+                    <h3 class="text-xl font-semibold text-white mb-3">Drum &amp; bass y Escenas Queer</h3>
+                    <ul class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 list-none">
+                        <li class="list-item">
+                            <p class="font-semibold">Jordana LeSesne.</p>
+                            <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-6">
+                                Pionera trans del drum &amp; bass en los años 90.
+                                Fusionó ciencia ficción, política y música de club.
+                            </p>
+                            <iframe class="w-full aspect-video border-0" src="https://www.youtube.com/embed/C2eyEV9mtqQ?si=LWsnaOq70yfGEp9v" title="Jordana LeSesne" allowfullscreen></iframe>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- IMAGEN -->
+                <div class="md:flex-1 md:flex-shrink-0 relative">
+                    <img src="img/ableton.png" alt="ableton" class="w-full rounded-lg block">
+                    <p class="text-gray-400 text-sm font-roboto mt-2 text-right hover:text-indigo-700">Ableton Live</p>
+                </div>
+
+            </div>
+
+        </main>
+
     </div>
 
-     <!-- IMAGEN -->
-          <div class="md:flex-1 md:flex-shrink-0 relative">
-          <img src="img/ableton.png" alt="ableton" class="w-full rounded-lg block">
-          <p class="text-gray-400 text-sm font-roboto mt-2 text-right hover:text-indigo-700">Ableton Live</p>
-          </div>
-    </div>
-    </div>
- 
-    
-</div>
-</main>
-
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="relative text-white text-center py-6 overflow-hidden">
 
-    <!-- FONDO ANIMADO -->
-    <div class="absolute inset-0 ambient-bg"
-         style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
-    </div>
+        <!-- FONDO ANIMADO -->
+        <div class="absolute inset-0 ambient-bg"
+             style="background: radial-gradient(circle at 70% 80%, rgba(79, 20, 206, 0.12), transparent 70%);">
+        </div>
 
-    <!-- CONTENIDO -->
-    <div class="relative z-10">
-        <p class="text-sm md:text-base">
-            Mujeres en la Música Electrónica - Victoria Melina<br>
-            Informática General 2025
-        </p>
-    </div>
+        <!-- CONTENIDO -->
+        <div class="relative z-10">
+            <p class="text-sm md:text-base">
+                Mujeres en la Música Electrónica - Victoria Melina<br>
+                Informática General 2025
+            </p>
+        </div>
 
-</footer>
-    
-<script src="js/main.js"></script>
+    </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
-
 
 </html>

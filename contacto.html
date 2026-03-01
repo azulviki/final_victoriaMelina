@@ -34,26 +34,26 @@
     <!-- CONTENEDOR -->
     <div class="flex flex-1 w-full">
 
+        <!-- MENÚ LATERAL -->
         <nav id="sidebar" class="fixed top-0 left-0 h-screen w-64 bg-black transform -translate-x-full md:translate-x-0 transition-transform duration-300 md:flex md:flex-col md:justify-center z-40">
-        <ul class="font-open flex flex-col w-full my-auto">
-        <li class="nav-key"><a href="home.html">INICIO</a></li>
-        <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
-        <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
-        <li class="nav-key"><a href="populares.html">POPULARES</a></li>
-        <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
-        <li class="nav-key"><a href="contemporaneas.html">CONTEMPORÁNEAS</a></li>
-        <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
-        <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
-        <li class="nav-key"><a href="juego.html">JUEGO</a></li>
-        <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
-        <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
-        </ul>
+            <ul class="font-open flex flex-col w-full my-auto">
+                <li class="nav-key"><a href="home.html">INICIO</a></li>
+                <li class="nav-key"><a href="pioneras.html">PIONERAS</a></li>
+                <li class="nav-key"><a href="experimentales.html">EXPERIMENTALES</a></li>
+                <li class="nav-key"><a href="populares.html">POPULARES</a></li>
+                <li class="nav-key"><a href="digitales.html">DIGITALES</a></li>
+                <li class="nav-key"><a href="contemporaneas.html">CONTEMPORÁNEAS</a></li>
+                <li class="nav-key"><a href="argentinas.html">ARGENTINAS</a></li>
+                <li class="nav-key"><a href="galeria.html">GALERÍA</a></li>
+                <li class="nav-key"><a href="juego.html">JUEGO</a></li>
+                <li class="nav-key"><a href="contacto.html">CONTACTO</a></li>
+                <li class="nav-key"><a href="acerca.html">ACERCA DE MI</a></li>
+            </ul>
         </nav>
 
-        
         <!-- CONTENIDO -->
         <main class="flex-1 p-6 md:ml-64 overflow-y-auto flex justify-center">
-         <div class="md:pl-12 mt-12 w-full max-w-xl">
+            <div class="md:pl-12 mt-12 w-full max-w-xl">
 
                 <h1 class="text-4xl md:text-5xl font-bold mb-2">Contacto</h1>
                 <p class="text-gray-400 mb-10">¿Tenés alguna sugerencia, corrección o simplemente querés escribir? Dejá tu mensaje.</p>
@@ -63,7 +63,7 @@
 
                     <!-- Nombre -->
                     <div class="mb-6">
-                        <label class="block text-sm text-gray-400 mb-2">Nombre</label>
+                        <label for="nombre" class="block text-sm text-gray-400 mb-2">Nombre</label>
                         <input type="text" id="nombre" placeholder="Tu nombre"
                                class="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition">
                         <p class="error-msg text-red-400 text-sm mt-1 hidden">Por favor ingresá tu nombre.</p>
@@ -71,7 +71,7 @@
 
                     <!-- Email -->
                     <div class="mb-6">
-                        <label class="block text-sm text-gray-400 mb-2">Email</label>
+                        <label for="email" class="block text-sm text-gray-400 mb-2">Email</label>
                         <input type="email" id="email" placeholder="tu@email.com"
                                class="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition">
                         <p class="error-msg text-red-400 text-sm mt-1 hidden">Por favor ingresá un email válido.</p>
@@ -79,7 +79,7 @@
 
                     <!-- Mensaje -->
                     <div class="mb-8">
-                        <label class="block text-sm text-gray-400 mb-2">Mensaje</label>
+                        <label for="mensaje" class="block text-sm text-gray-400 mb-2">Mensaje</label>
                         <textarea id="mensaje" rows="5" placeholder="Tu mensaje..."
                                   class="w-full bg-transparent border border-gray-600 rounded px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
                         <p class="error-msg text-red-400 text-sm mt-1 hidden">Por favor escribí tu mensaje.</p>
@@ -87,10 +87,10 @@
 
                     <!-- Botón -->
                     <div class="flex justify-center mb-8">
-                    <button type="submit"
-                            class="px-8 py-3 border border-purple-500 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300">
-                        Enviar
-                    </button>
+                        <button type="submit"
+                                class="px-8 py-3 border border-purple-500 rounded-full text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300">
+                            Enviar
+                        </button>
                     </div>
 
                     <!-- Mensajes de estado -->
