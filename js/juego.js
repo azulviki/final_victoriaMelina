@@ -23,7 +23,7 @@ const sounds = soundFiles.map(file => {
 let sequence = [];
 let playerSequence = [];
 let level = 1;
-let activePads = 4;
+let activePads = 8;
 let playing = false;
 
 // reproducir sonido
