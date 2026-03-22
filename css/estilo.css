@@ -9,6 +9,17 @@ body {
     border-top: 1px solid #222;
 }
 
+#sound-icon line {
+  transition: y1 0.3s ease, y2 0.3s ease;
+}
+
+#muteBtn.muted #bar1 { y1: 16; y2: 16; }
+#muteBtn.muted #bar2 { y1: 16; y2: 16; }
+#muteBtn.muted #bar3 { y1: 16; y2: 16; }
+#muteBtn.muted #bar4 { y1: 16; y2: 16; }
+#muteBtn.muted #bar5 { y1: 16; y2: 16; }
+
+
 .nav-key > a {
     display: block;
     padding: 14px 20px;
